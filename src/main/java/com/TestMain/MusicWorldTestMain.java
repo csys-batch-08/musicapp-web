@@ -700,7 +700,7 @@ public class MusicWorldTestMain {
 					System.out.println("Enter playlist title to Delete here: ");
 					String deletePlaylist = sc.nextLine();
 					PlaylistDao del = new PlaylistDao();
-					del.deletePlaylist(deletePlaylist,checkUser);
+				//m	del.deletePlaylist(deletePlaylist,checkUser);
 					break;
 				
 				//Recharge wallet
@@ -735,7 +735,7 @@ public class MusicWorldTestMain {
 					System.out.println("Enter email id");
 					String email = sc.nextLine();
 					UserInfoDao userDao1 = new UserInfoDao();
-					userDao1.AddOnUser(email);
+					//userDao1.AddOnUser(email);
 					
 					break;
 				
