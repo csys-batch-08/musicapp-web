@@ -6,6 +6,8 @@
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
  
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -193,7 +195,7 @@ text-align: center;
             
            
     
-            <li> <a href ="ShowSongUser.jsp" class="gl" >SongList</a></li>
+            <li> <a href ="ShowSongServlet" class="gl" >SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="Wallet.jsp"    class="gl" >Recharge Wallet</a></li>
@@ -223,13 +225,6 @@ text-align: center;
 <% UserInfo uinfo =(UserInfo) session.getAttribute("currentUser");
 %>
 
-<%
-
-LibraryDao libraryDao = new   LibraryDao();
-List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-objsonglist=libraryDao.showAllSongs();
-
-%>		
  	<div id="image">
 
         <div class="slideshow-container">
@@ -279,48 +274,48 @@ objsonglist=libraryDao.showAllSongs();
 		<table>
 			<tbody>
 				<tr>
-					<%
-					int count = 0;
-					for (Library library : objsonglist) {
-					%>
+					<c:set var="count" value="0"/>
+                    <c:forEach items="${AllSongs}" var ="userHome">
+                   
+					
 					<td>
 						<table id="songs">
 							<tbody>
 								<tr>
-									<td><img src="Assets/<%=library.getSongImage()%>"
+									<td><img src="Assets/${userHome.songImage}"
 										alt="songimage"></td>
 								</tr>
 								<tr>
 									<td id="songdetails">
-									<%=	library.getSongTitle() %>
+									${userHome.songTitle}
 									</td>
 								</tr>
 							<tr>
 									<td>
 									<audio  controls>
-					                <source src="Assets/<%=library.getSongFile() %>" >
+					                <source src="Assets/${userHome.songFile}" >
 				                  	</audio>	
 									</td>
+								</tr>
 								</tr>
 							</tbody>
 						</table>
 
-
-
-					</td>
-					<%
-					count++;
-					if (count == 3) {
-					%>
-				</tr>
-				<tr>
-					<%
-					count = 0;
-					}
-					}
-					%>
-
-				</tr>
+                </td>
+   
+                 <c:set var="count" value="${count + 1}" scope="page" />
+   
+               
+                    <c:choose>
+                    <c:when test="${count==3}">
+                    </tr>
+                    <tr>
+                    <c:set var="count" value="0"/> 
+                    </c:when>
+                    </c:choose>
+                    </c:forEach>
+                    </tr>
+             
 			</tbody>
 		</table>
 	

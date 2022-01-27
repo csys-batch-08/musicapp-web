@@ -160,7 +160,7 @@ top:70px;
         <ul type="none">
             
             
-            <li><a href ="ShowSongUser.jsp">SongList</a></li>
+            <li><a href ="ShowSongServlet">SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="Wallet.jsp">Recharge Wallet</a></li>
@@ -172,7 +172,7 @@ top:70px;
             <li><a href ="UpdateUser.jsp">Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-                <li><a href ="user.jsp">Home</a></li>
+                <li><a href ="UserHomeServlet">Home</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
            

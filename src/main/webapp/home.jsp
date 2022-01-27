@@ -5,6 +5,8 @@
                <%@page import="com.webmusic.model.Library"%>
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
+            
+             <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  
 <!DOCTYPE html>
 <html>
@@ -197,7 +199,7 @@ text-align: center;
             
            
     
-            <li><a href ="ShowSongPremium.jsp"  class="gl">SongList</a></li>
+            <li><a href ="ShowSongPremiumUser"  class="gl">SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="AddPlaylist.jsp"  class="gl">Add Playlist</a></li>
@@ -206,10 +208,10 @@ text-align: center;
             <li><a href ="AddOnUser.jsp"  class="gl">AddOn User</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="DeletePlaylist.jsp"  class="gl">DeletePlaylist</a></li>
+            <li><a href ="DeletePlaylistServlet"  class="gl">DeletePlaylist</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylistUser.jsp"  class="gl"> AllPlaylist</a></li>
+            <li><a href ="PlaylistUserServlet"  class="gl"> AllPlaylist</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="UpdatePUser.jsp"  class="gl">Update Details</a></li>
@@ -229,17 +231,9 @@ text-align: center;
  
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
-<% UserInfo uinfo =(UserInfo) session.getAttribute("PremiumUser");
+<%-- <% UserInfo uinfo =(UserInfo) session.getAttribute("PremiumUser");
 %>
-
-
-<%
-
-LibraryDao libraryDao = new   LibraryDao();
-List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-objsonglist=libraryDao.showAllSongs();
-
-%>		
+ --%>
  		<div id="image">
 
         <div class="slideshow-container">
@@ -282,52 +276,53 @@ objsonglist=libraryDao.showAllSongs();
             </div>
     </div>
     
-    <p style="text-align: center;" id="user" >Welcome <%= uinfo.getFirstName() %></p>
+    <p style="text-align: center;" id="user" >Welcome ${PremiumUser.firstName}</p>
 	
-	<table>
+			<table>
 			<tbody>
 				<tr>
-					<%
-					int count = 0;
-					for (Library library : objsonglist) {
-					%>
+					<c:set var="count" value="0"/>
+                    <c:forEach items="${AllSongsPremium}" var ="premiumHome">
+                   
+					
 					<td>
 						<table id="songs">
 							<tbody>
 								<tr>
-									<td><img src="Assets/<%=library.getSongImage()%>"
+									<td><img src="Assets/${premiumHome.songImage}"
 										alt="songimage"></td>
 								</tr>
 								<tr>
 									<td id="songdetails">
-									<%=	library.getSongTitle() %>
+									${premiumHome.songTitle}
 									</td>
 								</tr>
-								<tr>
+							<tr>
 									<td>
 									<audio  controls>
-					                <source src="Assets/<%=library.getSongFile() %>" >
+					                <source src="Assets/${premiumHome.songFile}" >
 				                  	</audio>	
 									</td>
+								</tr>
 								</tr>
 							</tbody>
 						</table>
 
-
-					</td>
-					<%
-					count++;
-					if (count == 3) {
-					%>
-				</tr>
-				<tr>
-					<%
-					count = 0;
-					}
-					}
-					%>
-
-				</tr>
+                </td>
+   
+                 <c:set var="count" value="${count + 1}" scope="page" />
+   
+               
+                    <c:choose>
+                    <c:when test="${count==3}">
+                    </tr>
+                    <tr>
+                    <c:set var="count" value="0"/> 
+                    </c:when>
+                    </c:choose>
+                    </c:forEach>
+                    </tr>
+             
 			</tbody>
 		</table>
 	

@@ -3,7 +3,7 @@
             <%@page import="com.webmusic.model.Library"%>
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
- 
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -118,7 +118,11 @@ top:-25px;
            
         }
           
-        
+         #del{
+    text-decoration: none;
+    color: white;
+    }      
+         
            
 </style>
 
@@ -135,10 +139,10 @@ top:-25px;
             
            
     
-            <li><a href ="ShowUsers.jsp">ManageUsers</a></li>
+            <li><a href ="ShowUserServlet">ManageUsers</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Showsong.jsp">AllSongsList</a></li>
+            <li><a href ="ShowSongAdmin">AllSongsList</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="AddSong.jsp">AddSong</a></li>
@@ -150,7 +154,7 @@ top:-25px;
             <li><a href ="DeleteSong.jsp">ManageSongs</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylist.jsp">AllPlaylist</a></li>
+            <li><a href ="PlaylistAdminServlet">AllPlaylist</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="Admin.jsp">Home</a></li>
@@ -170,7 +174,7 @@ top:-25px;
 
 		
 		<br><br>
-		<!-- <table border="2" id="allsongs"> -->
+
 			<h2><b><center>Manage songs</center></b></h2>
 			<table class="table table-dark table-hover" id="allsongs">
 			<thead>
@@ -213,8 +217,7 @@ top:-25px;
 					<td> <%=library.getAlbum()%></td>
 					<td> <%=library.getGenre()%></td>
 					<td> <%=library.getLanguage()%></td>
-					<td> <a href="deletesong?songTitle=<%=library.getSongTitle()%>">In Active</a>
-					
+					<td><button class="btn btn-danger" ><a href="deletesong?songTitle=<%=library.getSongTitle()%>" id="del">Delete</a></button></td>
 					
 					
 			</tr>

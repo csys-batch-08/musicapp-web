@@ -4,7 +4,7 @@
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
  
-
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <!DOCTYPE html>
 <html>
@@ -148,7 +148,7 @@ top:-25px;
             <li><a href ="UpdateUser.jsp">Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-                  <li><a href ="user.jsp">Home</a></li>
+                  <li><a href ="UserHomeServlet">Home</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
           
@@ -166,14 +166,9 @@ top:-25px;
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
 
-<% 
-LibraryDao libraryDao = new   LibraryDao();
-List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-objsonglist=libraryDao.showAllSongs();
+<%System.out.println("jsp"); %>
 
-%>		
- 	
-	<!-- 	<table border="2" id="allsongs"> -->
+ 
 	<br><br>
 			<h2><b><center>All Songs List</center></b></h2>
 			<table class="table table-hover" id="allsongs">
@@ -194,33 +189,29 @@ objsonglist=libraryDao.showAllSongs();
 			<br>
 			
 						<tbody>
-				<% 
-					int i = 0;
-					for (Library objbook : objsonglist) {
-						i++;
-						
-						%>
+			
+                    
+                    <c:forEach items="${AllSongs}" var ="allSongList">
+                   
 				<tr>
 				
-					
-					
-					<td><%=objbook.getSongId()%></td>
-					<td><%=objbook.getSongTitle()%></td>				
-					<td><%=objbook.getArtists()%></td>				
-					<td> <%=objbook.getAlbum()%></td>
-					<td> <%=objbook.getGenre()%></td>
-					<td> <%=objbook.getLanguage()%></td>
-					<td>
-					<audio  controls>
-					<source src="Assets/<%=objbook.getSongFile() %>" >
+				
+					<td> ${allSongList.songId}</td>
+					<td> ${allSongList.songTitle}</td>				
+					<td>${allSongList.artists}</td>				
+					<td>${allSongList.album}</td>
+					<td>${allSongList.genre}</td>
+					<td>${allSongList.language}</td>
+				 
+					<td><audio  controls>
+					<source src="Assets/${allSongList.songFile}" >
 					</audio>
 					</td>
-					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
+					<td><img id="img" src="Assets/${allSongList.songImage}" alt="Couldn't load"></td>
 			</tr>
 					
-					<%
-				}
-				%>
+			
+				</c:forEach>
 					</tbody>
 		           </table>
 			

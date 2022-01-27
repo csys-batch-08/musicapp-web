@@ -160,10 +160,10 @@ top:70px;
 
         <ul type="none">
             
-            <li><a href ="ShowUsers.jsp">ManageUsers</a></li>
+            <li><a href ="ShowUserServlet">ManageUsers</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Showsong.jsp">AllSongsList</a></li>
+            <li><a href ="ShowSongAdmin">AllSongsList</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="AddSong.jsp">AddSong</a></li>
@@ -175,7 +175,7 @@ top:70px;
             <li><a href ="DeleteSong.jsp">ManageSongs</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylist.jsp">AllPlaylist</a></li>
+            <li><a href ="PlaylistAdminServlet">AllPlaylist</a></li>
               <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="Admin.jsp">Home</a></li>

@@ -3,7 +3,7 @@
   <%@page import="com.webmusic.model.UserInfo"%>
     <%@page import="java.util.*"%>
             <%@page import="com.webmusic.DaoImpl.UserInfoDao"%>
-  
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -115,7 +115,10 @@ top:-25px;
             background: rgb(109, 216, 235);
            
         }
-          
+    #del{
+    text-decoration: none;
+    color: white;
+    }      
         
 </style>
 
@@ -131,10 +134,10 @@ top:-25px;
             
            
     
-            <li><a href ="ShowUsers.jsp">ManageUsers</a></li>
+            <li><a href ="ShowUserServlet">ManageUsers</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Showsong.jsp">AllSongsList</a></li>
+            <li><a href ="ShowSongAdmin">AllSongsList</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="AddSong.jsp">AddSong</a></li>
@@ -146,7 +149,7 @@ top:-25px;
             <li><a href ="DeleteSong.jsp">ManageSongs</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylist.jsp">AllPlaylist</a></li>
+            <li><a href ="PlaylistAdminServlet">AllPlaylist</a></li>
               <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="Admin.jsp">Home</a></li>
@@ -165,9 +168,6 @@ top:-25px;
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
 
-		
-		<!-- 
-		<table border="2" id="allusers"> -->
 		<br><br>
 			<h1><b><center>Manage Users</center></b></h1>
 			<table class="table table-dark table-hover" id="allsongs">
@@ -189,38 +189,27 @@ top:-25px;
 			<br>
 			
 						<tbody>
-				<%
-					
-						
-				UserInfoDao UserInfoDao = new UserInfoDao();
-				        List<UserInfo> userList = new ArrayList<UserInfo>();
-				        userList = UserInfoDao.showAllUsers();
-
-						
-				for (int i = 0; i<userList.size(); i++){
-					UserInfo userinfo = userList.get(i);
-					int j=i+1;
-				%>
+			    
+				    <c:forEach items="${UserlistAdmin}" var ="Userlist">
+				    <c:set var="i" value="${i+1 }"/>
+			
 				<tr>
-				
+		
+					<td>${i}</td>
+					<td>${Userlist.firstName}</td>
+					<td>${Userlist.lastName}</td>
+					<td>${Userlist.emailId}</td>
+					<td>${Userlist.userName}</td>
+					<td>${Userlist.password}</td>
+					<td>${Userlist.role}</td>
+					<td>${Userlist.mobileNumber}</td>
+					<td>${Userlist.wallet}</td>
+					<td><button class="btn btn-danger" ><a href="deleteuser?uname=${Userlist.userName}" id="del"> Delete</a></button></td>
 					
-					<td><%=j%></td>
-					<td><%=userinfo.getFirstName()%></td>
-					<td><%=userinfo.getLastName()%></td>				
-					<td><%=userinfo.getEmailId()%></td>				
-					<td> <%=userinfo.getUserName()%></td>
-					<td> <%=userinfo.getPassword()%></td>
-					<td> <%=userinfo.getRole()%></td>
-					<td> <%=userinfo.getMobileNumber()%></td>
-					<td> <%=userinfo.getWallet()%></td>
-					<td> <a href="deleteuser?uname=<%=userinfo.getUserName()%>" %>Delete</a>
 					
-					
-			</tr>
-					
-					<%
-				}
-				%>
+			     </tr>
+			      
+			      </c:forEach>
 					</tbody>
 		           </table>
 			

@@ -141,10 +141,10 @@ top:-25px;
             
            
     
-            <li><a href ="ShowUsers.jsp"  class="gl">ManageUsers</a></li>
+            <li><a href ="ShowUserServlet"  class="gl">ManageUsers</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Showsong.jsp"  class="gl">AllSongsList</a></li>
+            <li><a href ="ShowSongAdmin"  class="gl">AllSongsList</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="AddSong.jsp"  class="gl">AddSong</a></li>
@@ -156,7 +156,7 @@ top:-25px;
             <li><a href ="DeleteSong.jsp"  class="gl">ManageSongs</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylist.jsp" class="gl">AllPlaylist</a></li>
+            <li><a href ="PlaylistAdminServlet" class="gl">AllPlaylist</a></li>
                  <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="login.jsp"  class="gl">Logout</a></li>

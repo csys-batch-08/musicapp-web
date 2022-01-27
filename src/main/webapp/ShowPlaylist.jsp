@@ -3,7 +3,7 @@
      <%@page import="com.webmusic.model.Playlist"%>
     <%@page import="java.util.*"%>
             <%@page import="com.webmusic.DaoImpl.PlaylistDao"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
          <!DOCTYPE html>
 <html>
 <head>
@@ -177,16 +177,8 @@ top:-25px;
  
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
-
-<%		PlaylistDao playlistDao = new PlaylistDao();
-        List<Playlist> showPlaylist = new ArrayList<Playlist>();
-
-        showPlaylist = playlistDao.showAllPlaylist();
-
-		%>
-		
 		<br><br>
-		<!-- <table border="2" id="allplaylist"> -->
+
 			<h2><b><center>All Users Playlist</center></b></h2>
 			<table class="table table-dark table-hover" id="allsongs">
 			<thead>
@@ -200,27 +192,21 @@ top:-25px;
 			<br>
 			<br>
 			
-						<tbody>
-				<%
-					int i = 0;
-					for (Playlist showPlayList :showPlaylist ) {
-						i++;
-						
-				%>
+				    <tbody>
+			            
+				    <c:forEach items="${AllPlaylistAdmin}" var ="AdminPlaylist">
+				    <c:set var="i" value="${i+1 }"/>
 				<tr>
 				
-					
-					<td><%=i%></td>
-					<td><%=showPlayList.getSong()%></td>
-					<td><%=showPlayList.getPlaylistTitle()%></td>				
-					<td><%=showPlayList.getEmailId()%></td>				
-					
-					
-			</tr>
-					
-					<%
-				}
-				%>
+					<td>${i}</td>
+					<td>${AdminPlaylist.song}</td>				
+					<td>${AdminPlaylist.playlistTitle}</td>				
+					<td>${AdminPlaylist.emailId}</td>
+				   
+			    </tr>
+			   
+			    </c:forEach>
+			
 					</tbody>
 		           </table>
 			

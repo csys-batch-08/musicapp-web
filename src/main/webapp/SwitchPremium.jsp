@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register page</title>
+    <title>Switch Premium page</title>
 
     <style>
         body{
@@ -165,19 +165,19 @@ top:70px;
         <ul type="none">
             
             
-            <li><a href ="ShowSongUser.jsp">SongList</a></li>
+            <li><a href =""ShowSongServlet">SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Wallet.jsp">Recharge Wallet</a></li>
+            <li><a href ="Wallet.jsp" >Recharge Wallet</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="SwitchPremium.jsp">Switch to Premium</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="UpdateUser.jsp">Update Details</a></li>
+            <li><a href ="UpdateUser.jsp" >Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-                <li><a href ="user.jsp">Home</a></li>
+                <li><a href ="UserHomeServlet" >Home</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
            

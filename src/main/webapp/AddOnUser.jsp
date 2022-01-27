@@ -177,7 +177,7 @@ top:70px;
             <li><a href ="UpdatePUser.jsp">Update Details</a></li>
                 <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="home.jsp">Home</a></li>
+            <li><a href ="PremiumHomeServlet">Home</a></li>
         
         </ul>
         <div id="search">
