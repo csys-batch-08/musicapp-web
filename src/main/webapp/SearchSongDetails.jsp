@@ -4,6 +4,7 @@
     <%@page import="java.util.*"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
  <%@page import="com.webmusic.model.UserInfo"%>
+  <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,39 +54,29 @@
 			</thead>
 			<br>
 			<br>
-			<%
-				         List<Library> songlist  =  (List<Library>) session.getAttribute("songname");
-					for (int i=0; i<songlist.size();i++) 
-					{
-						Library objbook = songlist.get(i);
-						//System.out.println(objbook);
-				%>			
+			
 						<tbody>
-				         
+				           <c:forEach items="${songname}" var ="SongSearch">
 				<tr>
 				
+			
 					
-					
-		            <td><%= objbook.getSongId()%></td> 
-					<td><%= objbook.getSongTitle()%></td>				
-					<td><%= objbook.getArtists()%></td>				
-					<td> <%= objbook.getAlbum()%></td>
-					<td> <%= objbook.getGenre()%></td>
-					<td> <%= objbook.getLanguage()%></td>
-						<td>
-					<audio  controls>
-					<source src="Assets/<%=objbook.getSongFile() %>" >
+				    <td>${SongSearch.songId}</td>
+					<td>${SongSearch.songTitle}</td>				
+					<td>${SongSearch.artists}</td>				
+					<td>${SongSearch.album}</td>
+					<td>${SongSearch.genre}</td>
+					<td>${SongSearch.language}</td>
+				 
+					<td><audio  controls>
+					<source src="Assets/${SongSearch.songFile}" >
 					</audio>
 					</td>
-					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
-					
-					
+					<td><img id="img" src="Assets/${SongSearch.songImage}" alt="Couldn't load"></td>
+				
 					
 			</tr>
-					
-					<%
-				}
-				%>
+			      </c:forEach>
 					</tbody>
 		           </table>
 			

@@ -159,7 +159,7 @@ top:70px;
         <ul type="none">
             
       
-            <li><a href ="ShowSongPremium.jsp">SongList</a></li>
+            <li><a href ="ShowSongPremiumUser">SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="AddPlaylist.jsp">Add Playlist</a></li>
@@ -168,10 +168,10 @@ top:70px;
             <li><a href ="AddOnUser.jsp">AddOn User</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="DeletePlaylist.jsp">DeletePlaylist</a></li>
+            <li><a href ="DeletePlaylistServlet">DeletePlaylist</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="ShowPlaylistUser.jsp"> AllPlaylist</a></li>
+            <li><a href ="PlaylistUserServlet"> AllPlaylist</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="UpdatePUser.jsp">Update Details</a></li>

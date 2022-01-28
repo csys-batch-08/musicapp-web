@@ -46,7 +46,7 @@ public class UpdateSongServlet extends HttpServlet {
 		    updt.update(update);
 		    if(updt!=null) {
 //				res.getWriter().print(" Song Details Updated.");
-                res.sendRedirect("Showsong.jsp");
+                res.sendRedirect("ShowSongAdmin");
 			}
 			else 
 			{

@@ -6,6 +6,7 @@
                <%@page import="com.webmusic.model.Library"%>
     <%@page import="java.util.List"%>
             <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
+            <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -153,7 +154,7 @@ top:-25px;
             <li><a href ="UpdateSong.jsp"  class="gl">UpdateSong</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="DeleteSong.jsp"  class="gl">ManageSongs</a></li>
+            <li><a href ="DeleteSonglistServlet"  class="gl">ManageSongs</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="PlaylistAdminServlet" class="gl">AllPlaylist</a></li>
@@ -174,28 +175,16 @@ top:-25px;
  
 <div><img id="logo" src="Assets/MWlogoo.png"></div>
 
-
-
-<%
-LibraryDao libraryDao = new   LibraryDao();
-List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-objsonglist=libraryDao.showAllSongs();
-
-%>		
+	
  	<br><br>
 	<center>	<h2 id="songlisthead"><b>ADMIN PAGE</b></h2>  </center>
-		<!-- <table border="2" id="allsongs"> -->
+
 			<table class="table table-dark table-hover" id="allsongs">
 			<thead>
 				<tr>
-				  
-					<!-- <th>Song_id</th> -->
+				 
 					<th>Song_title</th>
-				<!-- 	<th>Artists</th>
-					<th>Album</th>
-					<th>Genre</th>
-					<th>Language</th> -->
-					<th>Play_Song</th>
+          			<th>Play_Song</th>
 					<th>Image_Song </th>								
 					</tr>
 			</thead>
@@ -203,33 +192,18 @@ objsonglist=libraryDao.showAllSongs();
 			<br>
 			
 						<tbody>
-				<% 
-					int i = 0;
-					for (Library objbook : objsonglist) {
-						i++;
-						
-						%>
+			        <c:forEach items="${AdminHome}" var ="HomeAdmin">
 				<tr>
-				
-					
-					
-				<%-- 	<td><%=objbook.getSongId()%></td> --%>
-					<td><%=objbook.getSongTitle()%></td>				
-			<%-- 		<td><%=objbook.getArtists()%></td>				
-					<td> <%=objbook.getAlbum()%></td>
-					<td> <%=objbook.getGenre()%></td>
-					<td> <%=objbook.getLanguage()%></td> --%>
+			
+					<td>${HomeAdmin.songTitle}</td>				
 					<td>
 					<audio  controls>
-					<source src="Assets/<%=objbook.getSongFile() %>" >
+					<source src="Assets/${HomeAdmin.songFile}" >
 					</audio>
 					</td>
-					<td><img id="img" src="Assets/<%=objbook.getSongImage() %>"></td>
+					<td><img id="img" src="Assets/${HomeAdmin.songImage}" alt="Couldn't load"></td>
 			</tr>
-					
-					<%
-				}
-				%>
+				</c:forEach>
 					</tbody>
 		           </table>
 			

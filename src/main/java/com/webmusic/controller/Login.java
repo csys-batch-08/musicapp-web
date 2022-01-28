@@ -44,7 +44,24 @@ public class Login extends HttpServlet{
 					HttpSession session=req.getSession();
 					session.setAttribute("Adminstaration", admin);
 					System.out.println("admin");
-				    res.sendRedirect("Admin.jsp");
+				 
+				    LibraryDao libraryDao = new   LibraryDao();
+					List<Library> objsonglist = (List<Library>)req.getAttribute("allSongs");
+					objsonglist=libraryDao.showAllSongs();
+
+					req.setAttribute("AdminHome",objsonglist);
+					RequestDispatcher rd=req.getRequestDispatcher("Admin.jsp");
+				    
+					
+					try {
+						rd.forward(req, res);
+					} catch (ServletException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 				}
 				else if(admin==null)
 				{

@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -75,12 +76,13 @@ public class SearchSongServlet extends HttpServlet {
 			 
 		 }
 
-		
-		
+		 
+	
 		session.setAttribute("songname",showList );
+		RequestDispatcher rd=request.getRequestDispatcher("SearchSongDetails.jsp");
+		rd.forward(request, response);
 		
-
-		response.sendRedirect("SearchSongDetails.jsp");
+		//response.sendRedirect("SearchSongDetails.jsp");
 	} catch (Exception e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

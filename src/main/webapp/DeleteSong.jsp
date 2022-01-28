@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>All Users list page</title>
+<title>Delete song list page</title>
 <style>
      
       .navs{
@@ -151,13 +151,13 @@ top:-25px;
             <li><a href ="UpdateSong.jsp">UpdateSong</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="DeleteSong.jsp">ManageSongs</a></li>
+            <li><a href ="DeleteSonglistServlet">ManageSongs</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="PlaylistAdminServlet">AllPlaylist</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Admin.jsp">Home</a></li>
+            <li><a href ="AdminHomeServlet">Home</a></li>
           
         </ul>
         <div id="search">
@@ -195,36 +195,20 @@ top:-25px;
 			<br>
 			
 						<tbody>
-				<% 
-				LibraryDao libraryDao = new   LibraryDao();
-				List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-				objsonglist=libraryDao.showAllSongs();
-
-						
-				for (int i = 0; i<objsonglist.size(); i++){
-					
-					Library library = objsonglist.get(i);
-					
-						
-						%>
+				 <c:forEach items="${DeleteSongs}" var ="DeleteSongAdmin">
 				<tr>
 				
-					
-				
-					<td><%=library.getSongId()%></td>
-					<td><%=library.getSongTitle()%></td>				
-					<td><%=library.getArtists()%></td>				
-					<td> <%=library.getAlbum()%></td>
-					<td> <%=library.getGenre()%></td>
-					<td> <%=library.getLanguage()%></td>
-					<td><button class="btn btn-danger" ><a href="deletesong?songTitle=<%=library.getSongTitle()%>" id="del">Delete</a></button></td>
+				   <td>${DeleteSongAdmin.songId}</td>
+					<td>${DeleteSongAdmin.songTitle}</td>				
+					<td>${DeleteSongAdmin.artists}</td>				
+					<td>${DeleteSongAdmin.album}</td>
+					<td>${DeleteSongAdmin.genre}</td>
+					<td>${DeleteSongAdmin.language}</td>					
+					<td><button class="btn btn-danger" ><a href="deletesong?songTitle=${DeleteSongAdmin.songTitle}" id="del">Inactive</a></button></td>
 					
 					
 			</tr>
-					
-					<%
-				}
-				%>
+				</c:forEach>
 					</tbody>
 		           </table>
 			

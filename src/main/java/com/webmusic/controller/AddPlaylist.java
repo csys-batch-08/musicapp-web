@@ -40,7 +40,7 @@ public class AddPlaylist extends HttpServlet {
 			playDao.insertPlaylist(playlist);
 			 if(playDao!=null) {
 //					res.getWriter().print("Your Playlist added.!");
-                    res.sendRedirect("ShowPlaylistUser.jsp");
+                    res.sendRedirect("PlaylistUserServlet");
 				}
 				else 
 				{

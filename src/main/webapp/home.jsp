@@ -229,45 +229,42 @@ text-align: center;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/MWlogoo.png" alt="can't load image"></div>
 
-<%-- <% UserInfo uinfo =(UserInfo) session.getAttribute("PremiumUser");
-%>
- --%>
  		<div id="image">
 
         <div class="slideshow-container">
     
             <div class="mySlides fade">
          
-              <img src="Assets/okk3.jpg" style="width:80%">
+              <img src="Assets/okk3.jpg" style="width:80%" alt="can't load image">
             </div>
             
             
          <div class="mySlides fade">
-                <img src="Assets/wp2009638-avicii-wallpapers.jpg" style="width:80%">
+                <img src="Assets/wp2009638-avicii-wallpapers.jpg" style="width:80%" alt="can't load image">
             </div>
            
             <div class="mySlides fade">
         
          
             
-               <img src="Assets/unnamed.jpg" style="width:80%">
+               <img src="Assets/unnamed.jpg" style="width:80%" alt="can't load image">
             </div>
             
             
             <div class="mySlides fade">
             
-                <img src="Assets/AW.jpg" style="width:80%">
+                <img src="Assets/AW.jpg" style="width:80%" alt="can't load image">
               </div>
               
                <div class="mySlides fade">
-                <img src="Assets/suriya.jpg" style="width:80%">
+                <img src="Assets/suriya.jpg" style="width:80%" alt="can't load image">
             </div>
               
               <div class="mySlides fade">
             
-                <img src="Assets/marshmello.jpg" style="width:80%">
+                <img src="Assets/marshmello.jpg" style="width:80%" alt="can't load image">
               </div>
     
      

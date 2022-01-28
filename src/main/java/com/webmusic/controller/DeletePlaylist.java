@@ -52,7 +52,7 @@ public class DeletePlaylist extends HttpServlet {
 			{
 //				response.getWriter().print("You'r playlist is deleted");
 //				System.out.println(" playlist is deleted");
-				response.sendRedirect("ShowPlaylistUser.jsp");
+				response.sendRedirect("DeletePlaylistServlet");
 				
 			}else {
 				response.getWriter().print("You'r playlist is not deleted!!");

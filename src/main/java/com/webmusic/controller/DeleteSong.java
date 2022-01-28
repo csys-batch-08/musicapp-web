@@ -37,7 +37,7 @@ public class DeleteSong extends HttpServlet {
 				if(b==true)
 				{
 					System.out.println(" song is deleted");
-					response.sendRedirect("Showsong.jsp");
+					response.sendRedirect("DeleteSonglistServlet");
 					
 				}else
 				{
