@@ -30,7 +30,7 @@ public class ShowUserServlet extends HttpServlet {
         userList = UserInfoDao.showAllUsers();
 
     	request.setAttribute("UserlistAdmin",userList);
-		RequestDispatcher rd=request.getRequestDispatcher("ShowUsers.jsp");	
+		RequestDispatcher rd=request.getRequestDispatcher("showUsers.jsp");	
 		rd.forward(request, response);
 		
 	}

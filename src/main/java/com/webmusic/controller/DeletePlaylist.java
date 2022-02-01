@@ -15,26 +15,19 @@ import com.webmusic.DaoImpl.PlaylistDao;
 import com.webmusic.model.Playlist;
 import com.webmusic.model.UserInfo;
 
-/**
- * Servlet implementation class DeletePlaylist
- */
+
 @WebServlet("/deleteplaylist")
 public class DeletePlaylist extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+ 
     public DeletePlaylist() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
 		String PlaylistTitle = request.getParameter("plname");
@@ -44,33 +37,29 @@ public class DeletePlaylist extends HttpServlet {
 		
 		
 		PlaylistDao playlistdao = new PlaylistDao();
-		//.playlistdao playlist = playlistdao.findPlaylistId(PlaylistTitle);
+		
 		
 		try {
 			boolean b=playlistdao.deletePlaylist(PlaylistTitle, user.getEmailId());
 			if(b==true)
 			{
-//				response.getWriter().print("You'r playlist is deleted");
-//				System.out.println(" playlist is deleted");
-				response.sendRedirect("DeletePlaylistServlet");
+			response.sendRedirect("DeletePlaylistServlet");
 				
 			}else {
 				response.getWriter().print("You'r playlist is not deleted!!");
 			}
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 

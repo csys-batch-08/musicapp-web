@@ -107,10 +107,7 @@
                 <th><input type="password" name="UserPassword" id="password" placeholder="********" pattern = "[a-zA-Z0-9@#]{5,8}" required ></th>
             </tr>
            
-   <!--          <tr>
-                <th><label for="role">Role:</label></th>
-                <th><input type="text" name="Role" id="name" placeholder="Enter role" pattern = "[a-zA-Z]+{2,20}"required ></th>
-            </tr> -->
+
 
             <tr>
                 <th><label for="mobile">Mobile Number:</label></th>
@@ -121,7 +118,7 @@
         <table id="buttontable">
             <tr>
                 <td><button type="submit">Click to Register</button>
-         <!--       <button class="gl" ><a href="login.jsp"> or LOGIN</a></button></td> -->
+
            
             <div class="options">
                 
@@ -146,7 +143,7 @@ function emailvalid()
 var email_id = document.getElementById("emailId").value;  
 console.log(email_id);
 
-var url="ExceptionRegister.jsp?email="+email_id;  
+var url="ExceptionRegisterServlet?email="+email_id;  
   
 if(window.XMLHttpRequest){  
 request=new XMLHttpRequest();  

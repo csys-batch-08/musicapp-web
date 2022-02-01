@@ -31,7 +31,7 @@ public class DeletePlaylistServlet extends HttpServlet {
         showPlaylist = playlistDao.showAllPlaylist();
 
     	request.setAttribute("DeletePlaylist",showPlaylist);
-		RequestDispatcher rd=request.getRequestDispatcher("DeletePlaylist.jsp");	
+		RequestDispatcher rd=request.getRequestDispatcher("deletePlaylist.jsp");	
 		rd.forward(request, response);
 		
 	}

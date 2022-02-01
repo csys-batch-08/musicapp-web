@@ -192,7 +192,7 @@ text-align: center;
 </style>
 </head>
 <body>
-<body style="background-color: lightblue ">
+<body style="background: url(Assets/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg)">
 <div id="nav">
 
         <ul type="none">
@@ -202,10 +202,10 @@ text-align: center;
             <li><a href ="ShowSongPremiumUser"  class="gl">SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="AddPlaylist.jsp"  class="gl">Add Playlist</a></li>
+            <li><a href ="addPlaylist.jsp"  class="gl">Add Playlist</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="AddOnUser.jsp"  class="gl">AddOn User</a></li>
+            <li><a href ="addOnUser.jsp"  class="gl">AddOn User</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="DeletePlaylistServlet"  class="gl">DeletePlaylist</a></li>
@@ -214,7 +214,7 @@ text-align: center;
             <li><a href ="PlaylistUserServlet"  class="gl"> AllPlaylist</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="UpdatePUser.jsp"  class="gl">Update Details</a></li>
+            <li><a href ="updatePremiumUser.jsp"  class="gl">Update Details</a></li>
               <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="login.jsp"  class="gl">Logout</a></li>
@@ -228,6 +228,8 @@ text-align: center;
 </form>
 </div>
     </div>
+ <br><br>
+ 
  
 <div><img id="logo" src="Assets/MWlogoo.png" alt="can't load image"></div>
 
@@ -275,6 +277,7 @@ text-align: center;
     
     <p style="text-align: center;" id="user" >Welcome ${PremiumUser.firstName}</p>
 	
+	<br><br>
 			<table>
 			<tbody>
 				<tr>

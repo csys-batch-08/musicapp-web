@@ -3,8 +3,6 @@ package com.webmusic.DaoImpl;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-
 import com.webmusic.Dao.UserInfoInterface;
 import com.webmusic.model.UserInfo;
 import com.webmusic.util.ConnectionUtil;
@@ -64,7 +62,7 @@ public class UserInfoDao implements UserInfoInterface{
 			stmt.setString(1, userName);
 
 			 flag= stmt.executeUpdate()>0;
-			//System.out.println(res + "is deleted");
+			
 			stmt.close();
 			con.close();
 		} catch (Exception e) {
@@ -77,7 +75,7 @@ public class UserInfoDao implements UserInfoInterface{
 	// List all users
 	public List<UserInfo> showAllUsers() {
 		List<UserInfo> userList = new ArrayList<UserInfo>();
-		String query = "select*from user_info";
+		String query = "select first_name,  last_name, email_Id, user_name, password, role, mobile_number,user_wallet from user_info";
 		Connection con = null;
 		PreparedStatement stmt;
 		try {
@@ -94,7 +92,6 @@ public class UserInfoDao implements UserInfoInterface{
 
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return userList;
@@ -104,19 +101,10 @@ public class UserInfoDao implements UserInfoInterface{
 	// Recharge Wallet
 	public int UpdateUserWallet(UserInfo user) {
 		String query = "update user_info set user_wallet= user_wallet + ? where email_id=? ";
-		//String getWalletQuery = "select user_wallet from user_info where email_id=?";
 		Connection con;
 		int i = 0;
 		try {
 			con = ConnectionUtil.getDBconnect();
-			//PreparedStatement checkWallet = con.prepareStatement(getWalletQuery);
-			//checkWallet.setString(1, user.getEmailId());
-			//ResultSet rs = checkWallet.executeQuery();
-//			double wallet = 0;
-//			if (rs.next()) {
-//				wallet = rs.getDouble(1);
-//			}
-			//System.out.println(wallet + "wallet is found!!");
 			PreparedStatement updateWallet = con.prepareStatement(query);
 			updateWallet.setDouble(1,  user.getWallet());
 			updateWallet.setString(2, user.getEmailId());
@@ -126,7 +114,6 @@ public class UserInfoDao implements UserInfoInterface{
 			System.out.println(i + "wallet is updated");
 
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -137,19 +124,10 @@ public class UserInfoDao implements UserInfoInterface{
 	// Switch to Premium
 	public int SwitchToPremium(UserInfo user) {
 		String query = "update user_info set role=? where email_id=?";
-		//String getWalletQuery = "select user_wallet from user_info where email_id=?";
 		Connection con;
 		int i = 0;
 		try {
 			con = ConnectionUtil.getDBconnect();
-			//PreparedStatement checkWallet = con.prepareStatement(getWalletQuery);
-			//checkWallet.setString(1, user.getEmailId());
-			//ResultSet rs = checkWallet.executeQuery();
-//			double wallet = 0;
-//			if (rs.next()) {
-//				wallet = rs.getDouble(1);
-//			}
-//			System.out.println(wallet + "wallet is found!!");
 			user.setWallet(user.getWallet()-250);
 			UpdateUserWallet(user);
 			PreparedStatement updateUser = con.prepareStatement(query);
@@ -164,7 +142,6 @@ public class UserInfoDao implements UserInfoInterface{
 			System.out.println(i + "USer upgraded");
 
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return i;
@@ -188,13 +165,15 @@ public class UserInfoDao implements UserInfoInterface{
 			System.out.println("add on updated"+i);
 			
 		} catch (SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
 		return i;
 		
 	}
+	
+	
+	// To find add on user already added
 	public boolean findUserAlreadyAddOn(UserInfo user) throws ClassNotFoundException, SQLException
 	{
 		boolean result=false;

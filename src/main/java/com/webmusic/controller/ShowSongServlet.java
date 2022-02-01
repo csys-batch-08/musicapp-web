@@ -13,24 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.webmusic.DaoImpl.LibraryDao;
 import com.webmusic.model.Library;
 
-/**
- * Servlet implementation class ShowSongServlet
- */
 @WebServlet("/ShowSongServlet")
 public class ShowSongServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+ 
     public ShowSongServlet() {
         super();
-        // TODO Auto-generated constructor stub
+
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 	
@@ -42,17 +34,14 @@ public class ShowSongServlet extends HttpServlet {
 
 
 			request.setAttribute("AllSongs",objsonglist);
-			RequestDispatcher rd=request.getRequestDispatcher("ShowSongUser.jsp");
-			//response.sendRedirect("ShowSongUser.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("showSongUser.jsp");
+			
 			rd.forward(request, response);
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 

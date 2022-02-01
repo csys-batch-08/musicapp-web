@@ -198,13 +198,13 @@ text-align: center;
             <li> <a href ="ShowSongServlet" class="gl" >SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="Wallet.jsp"    class="gl" >Recharge Wallet</a></li>
+            <li><a href ="wallet.jsp"    class="gl" >Recharge Wallet</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="SwitchPremium.jsp"  class="gl" >Switch to Premium</a></li>
+            <li><a href ="switchPremium.jsp"  class="gl" >Switch to Premium</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="UpdateUser.jsp"   class="gl" >Update Details</a></li>
+            <li><a href ="updateUser.jsp"   class="gl" >Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="login.jsp"   class="gl" >Logout</a></li>

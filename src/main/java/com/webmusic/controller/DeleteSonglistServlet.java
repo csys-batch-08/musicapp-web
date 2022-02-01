@@ -32,8 +32,8 @@ public class DeleteSonglistServlet extends HttpServlet {
 
 
 		request.setAttribute("DeleteSongs",objsonglist);
-		RequestDispatcher rd=request.getRequestDispatcher("DeleteSong.jsp");
-		//response.sendRedirect("ShowSongUser.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("deleteSong.jsp");
+		
 		rd.forward(request, response);
 		
 	}

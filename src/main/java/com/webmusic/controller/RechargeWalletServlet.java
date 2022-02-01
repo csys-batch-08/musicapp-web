@@ -38,9 +38,9 @@ public class RechargeWalletServlet extends HttpServlet {
 			HttpSession session=req.getSession();
 	        UserInfo user=(UserInfo)session.getAttribute("currentUser");
 	        user.setWallet(amount);
-			//int i=userDao.UpdateUserWallet(user);
+
 			if(user!=null) {
-				res.sendRedirect("ExceptionAdd.jsp");
+				res.sendRedirect("exceptionAdd.jsp");
 				
 			}
 			else 

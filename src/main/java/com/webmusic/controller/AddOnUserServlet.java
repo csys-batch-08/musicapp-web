@@ -29,8 +29,7 @@ public class AddOnUserServlet extends HttpServlet {
 	        	int i=userDao.AddOnUser(email,user);
 			
 			if(i>0) {
-				   res.sendRedirect("ExceptionAddUser.jsp");
-				  // res.getWriter().print("User is Added successfully!!");
+				   res.sendRedirect("exceptionAddUser.jsp");
 				
 			       }
 			         else 
@@ -40,8 +39,8 @@ public class AddOnUserServlet extends HttpServlet {
 	              }
 	        else
 	          {
-	        	//res.getWriter().print("You Can't add more then one user");
-	        	res.sendRedirect("ExceptionUserLimit.jsp");
+	        	
+	        	res.sendRedirect("exceptionUserLimit.jsp");
 	          }
 		    
 			} catch (Exception e) {

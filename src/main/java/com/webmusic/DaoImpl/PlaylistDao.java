@@ -6,15 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
-
-
-
 import com.webmusic.Dao.PlaylistInterface;
 import com.webmusic.model.Playlist;
-import com.webmusic.model.UserInfo;
 import com.webmusic.util.ConnectionUtil;
 
 
@@ -38,7 +32,7 @@ public class PlaylistDao implements PlaylistInterface{
 	public int findPlaylistId(String playListName)
 	{
 		String query="select id from playlist where playlist_Title='"+playListName+"'";
-//		String JoinPlaylist = "";
+
 		int playlistId=0;
 		try {
 			Connection con=ConnectionUtil.getDBconnect();
@@ -50,7 +44,7 @@ public class PlaylistDao implements PlaylistInterface{
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	return playlistId;	
@@ -60,7 +54,7 @@ public class PlaylistDao implements PlaylistInterface{
 	 public List<Playlist> showAllPlaylist() 
      {
 	    List<Playlist> showPlaylist = new ArrayList<Playlist>();
-     String query ="select * from playlist where status='active'";
+     String query ="select  song_Id, playlist_title, email_id, status from playlist where status='active'";
      Connection con=null;
      PreparedStatement stmt;
      try {
@@ -71,7 +65,7 @@ public class PlaylistDao implements PlaylistInterface{
 			 while(rs.next())
 			 {
 				 com.webmusic.model.Library song=libDao.findSong(rs.getInt(1));
-				 Playlist  playList = new Playlist(song, rs.getString(3),rs.getString(4));
+				 Playlist  playList = new Playlist(song, rs.getString(2),rs.getString(3));
 				 showPlaylist.add(playList);
 			 }
 			 
@@ -79,7 +73,7 @@ public class PlaylistDao implements PlaylistInterface{
      	
      	e.printStackTrace();
      } catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return showPlaylist;

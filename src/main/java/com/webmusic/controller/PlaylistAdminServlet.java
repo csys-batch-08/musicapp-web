@@ -30,7 +30,7 @@ public class PlaylistAdminServlet extends HttpServlet {
         showPlaylist = playlistDao.showAllPlaylist();
 
     	request.setAttribute("AllPlaylistAdmin",showPlaylist);
-		RequestDispatcher rd=request.getRequestDispatcher("ShowPlaylist.jsp");	
+		RequestDispatcher rd=request.getRequestDispatcher("showPlaylist.jsp");	
 		rd.forward(request, response);
 		
 	}

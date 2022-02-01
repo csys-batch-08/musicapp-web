@@ -25,11 +25,9 @@ public class Login extends HttpServlet{
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		UserInfo checkUser = null;
 		String uname = req.getParameter("text");
-		//System.out.println(uname);
-		
+
 		String password = req.getParameter("pass");
-		//System.out.println(password);
-			
+
 		
 		LoginDao loginDao = new LoginDao();
 		try 
@@ -50,16 +48,16 @@ public class Login extends HttpServlet{
 					objsonglist=libraryDao.showAllSongs();
 
 					req.setAttribute("AdminHome",objsonglist);
-					RequestDispatcher rd=req.getRequestDispatcher("Admin.jsp");
+					RequestDispatcher rd=req.getRequestDispatcher("admin.jsp");
 				    
 					
 					try {
 						rd.forward(req, res);
 					} catch (ServletException e) {
-						// TODO Auto-generated catch block
+
 						e.printStackTrace();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
+
 						e.printStackTrace();
 					}
 				}
@@ -84,10 +82,10 @@ public class Login extends HttpServlet{
 					try {
 						rd.forward(req, res);
 					} catch (ServletException e) {
-						// TODO Auto-generated catch block
+
 						e.printStackTrace();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
+
 						e.printStackTrace();
 					}
 					}
@@ -105,10 +103,10 @@ public class Login extends HttpServlet{
 						try {
 							rd.forward(req, res);
 						} catch (ServletException e) {
-							// TODO Auto-generated catch block
+
 							e.printStackTrace();
 						} catch (IOException e) {
-							// TODO Auto-generated catch block
+
 							e.printStackTrace();
 						}
 						
@@ -139,10 +137,10 @@ public class Login extends HttpServlet{
 			res.sendRedirect("login.jsp");
 			
 		} catch (ClassNotFoundException e) {
-		// TODO Auto-generated catch block
+
 		e.printStackTrace();
 	} catch (SQLException e) {
-		// TODO Auto-generated catch block
+
 		e.printStackTrace();
 	}
 		

@@ -29,7 +29,7 @@ public class AdminHomeServlet extends HttpServlet {
 			objsonglist=libraryDao.showAllSongs();
 
 			request.setAttribute("AdminHome",objsonglist);
-			RequestDispatcher rd=request.getRequestDispatcher("Admin.jsp");
+			RequestDispatcher rd=request.getRequestDispatcher("admin.jsp");
 			rd.forward(request, response);
 	}
 

@@ -31,7 +31,7 @@ public class Register extends HttpServlet {
 			String email = req.getParameter("UserEmail");
 			System.out.println(email);
 			email = email.trim().toLowerCase();
-			// System.out.println(email);
+			
 			String uname = req.getParameter("UserName");
 			System.out.println(uname);
 			

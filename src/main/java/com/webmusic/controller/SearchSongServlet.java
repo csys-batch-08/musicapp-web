@@ -18,17 +18,11 @@ import com.webmusic.model.Library;
 import com.webmusic.model.UserInfo;
 import javax.servlet.http.HttpSession;
 
-/**
- * Servlet implementation class SearchSongServlet
- */
 @WebServlet("/Search")
 public class SearchSongServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
+   
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{	
 		HttpSession session = request.getSession();
@@ -79,21 +73,18 @@ public class SearchSongServlet extends HttpServlet {
 		 
 	
 		session.setAttribute("songname",showList );
-		RequestDispatcher rd=request.getRequestDispatcher("SearchSongDetails.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("searchSongDetails.jsp");
 		rd.forward(request, response);
 		
-		//response.sendRedirect("SearchSongDetails.jsp");
 	} catch (Exception e) {
-		// TODO Auto-generated catch block
+
 		e.printStackTrace();
 	}
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+
 		doGet(request, response);
 	}
 

@@ -25,10 +25,7 @@ public class SwitchUserServlet extends HttpServlet {
 	        Double amount = user.getWallet();
 	        if(amount>=150) {
 	        	
-	        	
-	       
-				
-				
+			
 				UserInfoDao userdao=new UserInfoDao();
 				 int result=userdao.SwitchToPremium(user);
 				 if(user.getWallet()>amount) {
@@ -46,7 +43,7 @@ public class SwitchUserServlet extends HttpServlet {
 				 {
 					 System.out.println("insufficient balance");
 				 }
-//					response.getWriter("Recharge Succesfull");
+
 				}
 		
 					
@@ -54,12 +51,7 @@ public class SwitchUserServlet extends HttpServlet {
 				res.sendRedirect("login.jsp");
 				
 			}
-//			else 
-//			{
-//		
-//				res.sendRedirect("Wallet.jsp");
-//	        }
-//	       
+
 			}
 	        else {
                PrintWriter write = res.getWriter();			
@@ -68,9 +60,9 @@ public class SwitchUserServlet extends HttpServlet {
 				write.println("<script type='text/javascript'>");
 				write.println("alert(" + "'" + someMessage + "'" + ");</script>");
 				write.println("</head><body></body></html>");
-				System.out.println("inside  111");
+				
 	        	
-		       	res.sendRedirect("Wallet.jsp");
+		       	res.sendRedirect("wallet.jsp");
 
 	        }
 			} catch (Exception e) {

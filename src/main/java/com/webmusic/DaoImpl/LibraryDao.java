@@ -38,13 +38,13 @@ public class LibraryDao implements LibraryInterface{
 
 	// Show song details
 	public void showSongs(Library show) throws ClassNotFoundException, SQLException {
-		String query = "select*from library";
+		String query = "select song_id,  song_title, artists, album, genre, language,song_file,song_image from library";
 		Connection con = ConnectionUtil.getDBconnect();
 		PreparedStatement stmt = con.prepareStatement(query);
 		ResultSet rs = stmt.executeQuery();
 		while (rs.next()) {
 			System.out.println("\n" + rs.getInt(1) + "\n" + rs.getString(2) + "\n" + rs.getString(3) + "\n"
-					+ rs.getString(4) + "\n" + rs.getString(5) + "\n" + rs.getString(6) + "\n" + rs.getString(7));
+					+ rs.getString(4) + "\n" + rs.getString(5) + "\n" + rs.getString(6) + "\n" + rs.getString(7) + "\n" + rs.getString(8));
 		}
 
 	}
@@ -82,8 +82,8 @@ public class LibraryDao implements LibraryInterface{
 		PreparedStatement stmt = con.prepareStatement(delete);
 		stmt.setString(1, songTitle);
 
-		int res = stmt.executeUpdate();
-		//System.out.println(res + "is deleted");
+		//int res = stmt.executeUpdate();
+	
 		flag= stmt.executeUpdate()>0;
 		stmt.close();
 		con.close();
@@ -98,7 +98,7 @@ public class LibraryDao implements LibraryInterface{
 	// list song details
 	public List<Library> showAllSongs() {
 		List<Library> songList = new ArrayList<Library>();
-		String query = "select*from library where status='active'";
+		String query = "select song_id,  song_title, artists, album, genre, language, status, song_file, song_image from library where status='active'";
 		Connection con = null;
 		PreparedStatement stmt;
 		try {
@@ -128,8 +128,7 @@ public class LibraryDao implements LibraryInterface{
 	//search in jsp
 	public List<Library> searchsongs() throws ClassNotFoundException, SQLException {
 		List<Library> searchlist = new ArrayList<Library>();
-		//String query = "select * from library where song_title = '"+songtitle+"' and artists = '"+artist+"' and albums ='"+albums +"' and genre ='"+genre+"'and language ='"+language+"'";
-		String query = "select * from library where status='active'";
+		String query = "select song_id,  song_title, artists, album, genre, language, status, song_file, song_image from library where status='active'";
 		
 	    Connection	con = ConnectionUtil.getDBconnect();
 		
@@ -138,14 +137,14 @@ public class LibraryDao implements LibraryInterface{
 		
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
-				//System.out.println("song name"+rs.getString(2));
+				
 				Library library = new Library(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
 						rs.getString(5), rs.getString(6),rs.getString(8),rs.getString(9));
 				
 				searchlist.add(library);
 				
 			}
-			System.out.println("Completed 111");
+			
 		} catch (SQLException e) {
 
 			e.printStackTrace();
@@ -170,7 +169,7 @@ public class LibraryDao implements LibraryInterface{
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	return songId;	
@@ -179,8 +178,8 @@ public class LibraryDao implements LibraryInterface{
 	// finding song title from song object
 	public Library findSong(String name)
 	{
-		String query="select * from library where song_title='"+name+"'";
-		//int songId=findSongId(name);
+		String query="select song_id,  song_title, artists, album, genre, language from library where song_title='"+name+"'";
+		
 		Library song=null;
 		try {
 			Connection con=ConnectionUtil.getDBconnect();
@@ -192,7 +191,7 @@ public class LibraryDao implements LibraryInterface{
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	return song;	
@@ -201,8 +200,8 @@ public class LibraryDao implements LibraryInterface{
 	// finding song Id from song object
 	public Library findSong(int songId)
 	{
-		String query="select * from library where song_id='"+songId+"'";
-		//int songId=findSongId(name);
+		String query="select song_id,  song_title, artists, album, genre, language from library where song_id='"+songId+"'";
+		
 		Library song=null;
 		try {
 			Connection con=ConnectionUtil.getDBconnect();
@@ -214,7 +213,7 @@ public class LibraryDao implements LibraryInterface{
 			}
 			
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 	return song;	
