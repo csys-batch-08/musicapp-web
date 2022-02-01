@@ -48,7 +48,7 @@ public class SwitchUserServlet extends HttpServlet {
 		
 					
 			if(user!=null) {
-				res.sendRedirect("login.jsp");
+				res.sendRedirect("exceptionSwitchUser.jsp");
 				
 			}
 

@@ -224,6 +224,7 @@ text-align: center;
 
  	<div id="image">
 
+<br><br>
         <div class="slideshow-container">
     
             <div class="mySlides fade">

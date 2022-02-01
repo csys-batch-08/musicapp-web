@@ -55,7 +55,7 @@ margin-right:auto;
 
 #search input {
 	border: none;
-	height: 30px;
+	height: 45px;
 	font-weight: bold;
 	outline: none;
 	background-color:transparent;
@@ -71,7 +71,7 @@ margin-right:auto;
 	color: black;
 	padding: 15px 32px;
 	text-align: center;
-	height: 38px;
+	height: 45px;
 	font-family: bold;
 	font-size:15px;
 }
@@ -178,6 +178,7 @@ left: 145px;
 	width: 70px;
 	
 }
+ 
  
 table{
 margin-left:50px;
@@ -298,7 +299,7 @@ text-align: center;
 									</td>
 								</tr>
 							<tr>
-									<td>
+									<td id="songcontrol">
 									<audio  controls>
 					                <source src="Assets/${premiumHome.songFile}" >
 				                  	</audio>	
@@ -326,6 +327,7 @@ text-align: center;
 			</tbody>
 		</table>
 	
+
 	
 </body>
 </html>
@@ -356,7 +358,12 @@ document.addEventListener('play', function(e){
         }
     }
 }, true);
+
+
 </script>
+
+
+
 
 
 

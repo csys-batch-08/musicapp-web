@@ -62,7 +62,7 @@ margin-right:auto;
 
 #search input {
 	border: none;
-	height: 30px;
+	height: 45px;
 	font-weight: bold;
 	outline: none;
 	background-color:transparent;
@@ -78,7 +78,7 @@ margin-right:auto;
 	color: black;
 	padding: 15px 32px;
 	text-align: center;
-	height: 38px;
+	height: 45px;
 	font-family: bold;
 	font-size:15px;
 }
@@ -217,4 +217,15 @@ top:-25px;
 			
 </body>
 </html>
+<script>
 
+
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+</script>
