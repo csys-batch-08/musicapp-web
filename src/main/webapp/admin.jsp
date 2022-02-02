@@ -181,8 +181,8 @@ top:-25px;
 
 
 <br><br>
-  <%-- <center><p><h1><b>Music can change the world</b></h1><br>
-                                <h2><i>-Beethoven</i></h2></p></center> --%>
+   <center><p><h1><b>Music can change the world</b></h1><br>
+                                <h2><i>-Beethoven</i></h2></p></center> 
 
 
 
