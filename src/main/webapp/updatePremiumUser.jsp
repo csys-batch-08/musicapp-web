@@ -1,3 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+  <%@page import="com.webmusic.model.UserInfo"%>
+    <%@page import="java.util.*"%>
+            <%@page import="com.webmusic.DaoImpl.UserInfoDao"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
 <head>
@@ -8,7 +14,7 @@
 
     <style>
         body{
-            background: url(Assets/markus-spiske-hU9gx8YfVK4-unsplash.jpg);
+            background: url(Assets/images/markus-spiske-hU9gx8YfVK4-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -198,7 +204,7 @@ top:70px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
             
             
 
@@ -209,33 +215,33 @@ top:70px;
         <table id="signuptable" style="border-spacing: 5px;">
             <tr>
                 <th><label for="name">First Name:</label></th>
-                <th><input type="text" name="FirstName" id="name" placeholder="Enter your first name"  pattern = "[a-zA-Z]{3,30}" required autofocus></th>
+                <th><input type="text" name="FirstName" id="name" value="${premiumUser.firstName}" placeholder="Enter your first name"  pattern = "[a-zA-Z]{3,30}" required autofocus></th>
             </tr>
             <tr>
                 <th><label for="name">Last Name:</label></th>
-                <th><input type="text" name="LastName" id="name" placeholder="Enter your last name"  pattern = "[a-zA-Z]{3,30}" required></th>
+                <th><input type="text" name="LastName" id="name" value="${premiumUser.lastName}" placeholder="Enter your last name"  pattern = "[a-zA-Z]{3,30}" required></th>
             </tr>
            
             <tr>
                 <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required ></th>
+                <th><input type="email" name="UserEmail" id="emailId" value="${premiumUser.emailId}" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required ></th>
             </tr>
            
                     
            <tr>
                 <th><label for="name">User Name:</label></th>
-                <th><input type="text" name="UserName" id="name" placeholder="Enter user name"  pattern ="[a-z]{2,20}" required ></th>
+                <th><input type="text" name="UserName" id="name" value="${premiumUser.userName}" placeholder="Enter user name"  pattern ="[a-z]{2,20}" required ></th>
             </tr>
             
                                   
             <tr>
                 <th><label for="password">Password:</label></th>
-                <th><input type="password" name="UserPassword" id="password" placeholder="********"  pattern = "[a-zA-Z0-9@#]{5,10}" required ></th>
+                <th><input type="password" name="UserPassword" id="password" value="${premiumUser.password}" placeholder="********"  pattern = "[a-zA-Z0-9@#]{5,10}" required ></th>
             </tr>
            
             <tr>
                 <th><label for="mobile">Mobile Number:</label></th>
-                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
+                <th><input type="number" name="MobileNumber" id="mobile" value="${premiumUser.mobileNumber}" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
             </tr>         
         </table>
        

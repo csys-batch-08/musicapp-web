@@ -20,10 +20,11 @@ public class RechargeWalletServlet extends HttpServlet {
 
             String email = req.getParameter("UserEmail");
 			System.out.println(email);
-			Double cardNumber = Double.parseDouble(req.getParameter("AccountNumber"));
-			System.out.println(cardNumber);
-			Double cvv = Double.parseDouble(req.getParameter("cvv"));
-			System.out.println(cvv);
+			/*
+			 * Double cardNumber = Double.parseDouble(req.getParameter("AccountNumber"));
+			 * System.out.println(cardNumber); Double cvv =
+			 * Double.parseDouble(req.getParameter("cvv")); System.out.println(cvv);
+			 */
 			long mboNum = Long.parseLong(req.getParameter("MobileNumber"));
 			System.out.println(mboNum);
 			Double amount = Double.parseDouble(req.getParameter("Amount"));

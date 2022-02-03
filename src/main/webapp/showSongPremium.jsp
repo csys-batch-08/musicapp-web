@@ -166,7 +166,7 @@ top:-25px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
 
 
 	<br><br>
@@ -201,10 +201,10 @@ top:-25px;
 					<td>${SongList.language}</td>
 				 
 					<td><audio  controls>
-					<source src="Assets/${SongList.songFile}" >
+					<source src="Assets/songs/${SongList.songFile}" >
 					</audio>
 					</td>
-					<td><img id="img" src="Assets/${SongList.songImage}" alt="Couldn't load"></td>
+					<td><img id="img" src="Assets/images/${SongList.songImage}" alt="Couldn't load"></td>
 			  
 			   </tr>
 					

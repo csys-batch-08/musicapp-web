@@ -193,7 +193,7 @@ text-align: center;
 </style>
 </head>
 <body>
-<body style="background: url(Assets/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg)">
+<body style="background: url(Assets/images/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg)">
 <div id="nav">
 
         <ul type="none">
@@ -215,7 +215,7 @@ text-align: center;
             <li><a href ="PlaylistUserServlet"  class="gl"> AllPlaylist</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="updatePremiumUser.jsp"  class="gl">Update Details</a></li>
+            <li><a href ="showUserProfile"  class="gl">Update Details</a></li>
               <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="login.jsp"  class="gl">Logout</a></li>
@@ -232,7 +232,7 @@ text-align: center;
  <br><br>
  
  
-<div><img id="logo" src="Assets/MWlogoo.png" alt="can't load image"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png" alt="can't load image"></div>
 
  		<div id="image">
 
@@ -240,33 +240,33 @@ text-align: center;
     
             <div class="mySlides fade">
          
-              <img src="Assets/wp9998324-ed-sheeran-album-wallpapers.jpg" style="width:80%" alt="can't load image">
+              <img src="Assets/images/wp9998324-ed-sheeran-album-wallpapers.jpg" style="width:80%" alt="can't load image">
             </div>
             
             
          <div class="mySlides fade">
-                <img src="Assets/wp2009638-avicii-wallpapers.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/wp2009638-avicii-wallpapers.jpg" style="width:80%" alt="can't load image">
             </div>
            
           
             <div class="mySlides fade">
           
-               <img src="Assets/unnamed.jpg" style="width:80%" alt="can't load image">
+               <img src="Assets/images/unnamed.jpg" style="width:80%" alt="can't load image">
             </div>
             
             
             <div class="mySlides fade">
             
-                <img src="Assets/AW.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/AW.jpg" style="width:80%" alt="can't load image">
               </div>
               
                <div class="mySlides fade">
-                <img src="Assets/suriya.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/suriya.jpg" style="width:80%" alt="can't load image">
             </div>
               
               <div class="mySlides fade">
             
-                <img src="Assets/marshmello.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/marshmello.jpg" style="width:80%" alt="can't load image">
               </div>
     
      
@@ -289,7 +289,7 @@ text-align: center;
 						<table id="songs">
 							<tbody>
 								<tr>
-									<td><img src="Assets/${premiumHome.songImage}"
+									<td><img src="Assets/images/${premiumHome.songImage}"
 										alt="songimage"></td>
 								</tr>
 								<tr>
@@ -300,7 +300,7 @@ text-align: center;
 							<tr>
 									<td id="songcontrol">
 									<audio  controls>
-					                <source src="Assets/${premiumHome.songFile}" >
+					                <source src="Assets/songs/${premiumHome.songFile}" >
 				                  	</audio>	
 									</td>
 								</tr>

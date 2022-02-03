@@ -173,11 +173,8 @@ top:-25px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
 
-<%-- 	
- 	<br><br>
-	<center>	<h2 id="songlisthead"><b>ADMIN PAGE</b></h2>  </center> --%>
 
 
 <br><br>
@@ -205,10 +202,10 @@ top:-25px;
 					<td>${HomeAdmin.songTitle}</td>				
 					<td>
 					<audio  controls>
-					<source src="Assets/${HomeAdmin.songFile}" >
+					<source src="Assets/songs/${HomeAdmin.songFile}" >
 					</audio>
 					</td>
-					<td><img id="img" src="Assets/${HomeAdmin.songImage}" alt="Couldn't load"></td>
+					<td><img id="img" src="Assets/images/${HomeAdmin.songImage}" alt="Couldn't load"></td>
 			</tr>
 				</c:forEach>
 					</tbody>

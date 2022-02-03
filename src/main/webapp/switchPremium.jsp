@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(Assets/guillaume-techer-Jm9P0mDPo6A-unsplash.jpg);
+            background: url(Assets/images/headphones_laptop_macbook_apple1.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -35,13 +35,13 @@
             width: 150px;
             border: none;
             outline: none;
-            
+            background-color: lightgrey;
         }
         button:hover{
             background-color: rgb(109, 216, 235);
         }
         label,h2,h3{
-            color: white;
+            color: black;
         }
         #male{
             margin-left: 0%;
@@ -105,9 +105,9 @@ margin-right:auto;
 #search  button{
 	position: relative;
 	left: 0px;
-	background-color: DodgerBlue;
+	background-color: skyBlue;
 	border: none;
-	color: white;
+	color: black;
 	padding: 15px 32px;
 	text-align: center;
 	height: 38px;
@@ -193,7 +193,7 @@ top:70px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
             
             
 

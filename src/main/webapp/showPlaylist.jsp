@@ -136,7 +136,7 @@ top:-25px;
 
 </head>
 
-<body style="background: url(Assets/joanna-kosinska-dka5C8Ct2Fw-unsplash.jpg.jpg)">
+<body style="background: url(Assets/images/headphones_laptop_macbook_apple1.jpgss)">
 
 <div id="navs">
 
@@ -175,7 +175,7 @@ top:-25px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
 
 		<br><br>
 

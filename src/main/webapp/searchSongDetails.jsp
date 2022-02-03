@@ -32,7 +32,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
  
 </head>
-<body style="background: url(Assets/hello-i-m-nik-ZJpjMmc351s-unsplash.jpg)">
+<body style="background: url(Assets/images/hello-i-m-nik-ZJpjMmc351s-unsplash.jpg)">
 
 
 
@@ -69,10 +69,10 @@
 					<td>${SongSearch.language}</td>
 				 
 					<td><audio  controls>
-					<source src="Assets/${SongSearch.songFile}" >
+					<source src="Assets/songs/${SongSearch.songFile}" >
 					</audio>
 					</td>
-					<td><img id="img" src="Assets/${SongSearch.songImage}" alt="Couldn't load"></td>
+					<td><img id="img" src="Assets/images/${SongSearch.songImage}" alt="Couldn't load"></td>
 				
 					
 			</tr>

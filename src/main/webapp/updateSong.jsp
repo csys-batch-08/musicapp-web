@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(https://c1.wallpaperflare.com/preview/162/780/874/cassette-recording-sound-audio.jpg);
+            background: url(Assets/images/markus-spiske-hU9gx8YfVK4-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -195,7 +195,7 @@ top:70px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
 
 
 

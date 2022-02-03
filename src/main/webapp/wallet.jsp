@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(https://c1.wallpaperflare.com/preview/162/780/874/cassette-recording-sound-audio.jpg);
+            background: url(Assets/images/markus-spiske-hU9gx8YfVK4-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -84,28 +84,28 @@ margin-right:auto;
 	top: 15px;
 	right:10px;
 	border:2px solid white;
-	height: 38px;
+	height: 45px;
 }
 
 #search input {
 	border: none;
-	height: 30px;
+	height: 45px;
 	font-weight: bold;
 	outline: none;
 	background-color:transparent;
-	font-size: 18px;c
-	color: white;
+	font-size: 18px;
+	color: black;
 }
 
 #search  button{
 	position: relative;
 	left: 0px;
-	background-color: DodgerBlue;
+	background-color: skyBlue;
 	border: none;
-	color: white;
+	color: black;
 	padding: 15px 32px;
 	text-align: center;
-	height: 38px;
+	height: 45px;
 }
 
 ::placeholder {
@@ -188,41 +188,33 @@ top:70px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
             
             
             
 	<form action="recharge">
     <fieldset class="signup" id="addsongs">
+      
+      <br>
        <center><h2>Recharge Wallet here!</h2></center>
 
         <table id="signuptable" style="border-spacing: 5px;">
         
+        <br><br>
           <tr>
                 <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  required ></th>
+                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]+{2,5}" required autofocus></th>
             </tr>
            
-       
-            <tr>
-                <th><label for="CardNumber">Card Number:</label></th>
-                <th><input type="number" name="AccountNumber" id="AccountNumber" placeholder="Enter card number" pattern ="[0-9]{15}" required autofocus ></th>
-            </tr>
-           
-                    
-           <tr>
-                <th><label for="cvv">CVV:</label></th>
-                <th><input type="number" name="cvv" id="cvv" placeholder="Enter CVV" pattern ="[0-9]{3}" required ></th>
-            </tr>
             
                <tr>
                 <th><label for="mobile">Mobile Number:</label></th>
-                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
+                <th><input type="number" name="MobileNumber" id="mobile" placeholder="Enter mobile number" pattern ="[0-9]+{10}" required></th>
             </tr>                     
             
             <tr>
                 <th><label for="Amount">Amount:</label></th>
-                <th><input type="number" min="0" name="Amount" id="amount" placeholder="Enter Amount" pattern ="[0-9]{10}" required ></th>
+                <th><input type="number" min="0" name="Amount" id="amount" placeholder="Enter Amount" pattern ="[0-9]+{10}" required ></th>
                 
         </table>
        

@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(Assets/headphones_laptop_macbook_apple1.jpg);
+            background: url(Assets/images/headphones_laptop_macbook_apple1.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -35,7 +35,7 @@
             width: 150px;
             border: none;
             outline: none;
-            
+             background-color:lightgrey;
         }
         button:hover{
             background-color:rgb(109, 216, 235);
@@ -195,7 +195,7 @@ top:70px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
             
 	<form action="addOnUser" id="addsongs">
     <fieldset class="signup">
@@ -207,7 +207,7 @@ top:70px;
           <center><h3>Enter present user's Email Id here</h3></center>  
           <tr>
                 <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required ></th>
+                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter their email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required ></th>
             </tr>
         
          

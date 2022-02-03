@@ -132,7 +132,7 @@ top:-25px;
 
 
 </head>
-<body style="background: url(Assets/joanna-kosinska-dka5C8Ct2Fw-unsplash.jpg)">
+<body style="background: url(Assets/images/headphones_laptop_macbook_apple1.jpg)">
 	<div id="navs">
 
         <ul type="none">
@@ -170,7 +170,7 @@ top:-25px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
 
 		
 		<br><br>

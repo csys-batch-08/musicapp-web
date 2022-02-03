@@ -51,7 +51,7 @@ text-decoration: none;
 
 #search input {
 	border: none;
-	height: 30px;
+	height: 45px;
 	font-weight: bold;
 	outline: none;
 	background-color:transparent;
@@ -67,7 +67,7 @@ text-decoration: none;
 	color: black;
 	padding: 15px 32px;
 	text-align: center;
-	height: 38px;
+	height: 45px;
 	font-family: bold;
 	font-size:15px;
 }
@@ -204,7 +204,7 @@ text-align: center;
             <li><a href ="switchPremium.jsp"  class="gl" >Switch to Premium</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="updateUser.jsp"   class="gl" >Update Details</a></li>
+            <li><a href ="showUserProfile"   class="gl" >Update Details</a></li>
              <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
             <li><a href ="login.jsp"   class="gl" >Logout</a></li>
@@ -220,7 +220,7 @@ text-align: center;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/MWlogoo.png" alt="can't load image"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png" alt="can't load image"></div>
 
  	<div id="image">
 
@@ -229,34 +229,34 @@ text-align: center;
     
             <div class="mySlides fade">
          
-              <img src="Assets/okk3.jpg" style="width:80%" alt="can't load image">
+              <img src="Assets/images/okk3.jpg" style="width:80%" alt="can't load image">
             </div>
             
             
          <div class="mySlides fade">
-                <img src="Assets/wp2009638-avicii-wallpapers.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/wp2009638-avicii-wallpapers.jpg" style="width:80%" alt="can't load image">
             </div>
            
             <div class="mySlides fade">
         
          
             
-               <img src="Assets/unnamed.jpg" style="width:80%" alt="can't load image">
+               <img src="Assets/images/unnamed.jpg" style="width:80%" alt="can't load image">
             </div>
             
             
             <div class="mySlides fade">
             
-                <img src="Assets/AW.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/AW.jpg" style="width:80%" alt="can't load image">
               </div>
               
                <div class="mySlides fade">
-                <img src="Assets/suriya.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/suriya.jpg" style="width:80%" alt="can't load image">
             </div>
               
               <div class="mySlides fade">
             
-                <img src="Assets/marshmello.jpg" style="width:80%" alt="can't load image">
+                <img src="Assets/images/marshmello.jpg" style="width:80%" alt="can't load image">
               </div>
     
        
@@ -280,7 +280,7 @@ text-align: center;
 						<table id="songs">
 							<tbody>
 								<tr>
-									<td><img src="Assets/${userHome.songImage}"
+									<td><img src="Assets/images/${userHome.songImage}"
 										alt="songimage"></td>
 								</tr>
 								<tr>
@@ -291,7 +291,7 @@ text-align: center;
 							<tr>
 									<td>
 									<audio  controls>
-					                <source src="Assets/${userHome.songFile}" >
+					                <source src="Assets/songs/${userHome.songFile}" >
 				                  	</audio>	
 									</td>
 								</tr>

@@ -9,7 +9,7 @@
 
  <style>
         body{
-            background: url(Assets/adrian-korte-5gn2soeAc40-unsplash.jpg);
+            background: url(Assets/images/adrian-korte-5gn2soeAc40-unsplash.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
        </style>
