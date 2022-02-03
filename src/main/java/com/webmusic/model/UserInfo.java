@@ -1,5 +1,6 @@
 package com.webmusic.model;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class UserInfo {
@@ -11,6 +12,9 @@ public class UserInfo {
 	private String role;
 	private long mobileNumber;
 	private double wallet;
+	private LocalDate subscription_date;
+	private LocalDate expiry_date;
+	
 	public String getFirstName() {
 		return firstName;
 	}
@@ -56,6 +60,18 @@ public class UserInfo {
 	public double getWallet() {
 		return wallet;
 	}
+	public LocalDate getSubscription_date() {
+		return subscription_date;
+	}
+	public void setSubscription_date(LocalDate subscription_date) {
+		this.subscription_date = subscription_date;
+	}
+	public LocalDate getExpiry_date() {
+		return expiry_date;
+	}
+	public void setExpiry_date(LocalDate expiry_date) {
+		this.expiry_date = expiry_date;
+	}
 	public void setWallet(double wallet) {
 		this.wallet = wallet;
 	}
@@ -77,6 +93,20 @@ public class UserInfo {
 				&& Objects.equals(password, other.password) && Objects.equals(role, other.role)
 				&& Objects.equals(userName, other.userName)
 				&& Double.doubleToLongBits(wallet) == Double.doubleToLongBits(other.wallet);
+	}
+	public UserInfo(String firstName, String lastName, String emailId, String userName, String password, String role,
+			long mobileNumber, double wallet, LocalDate subscription_date, LocalDate expiry_date) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.emailId = emailId;
+		this.userName = userName;
+		this.password = password;
+		this.role = role;
+		this.mobileNumber = mobileNumber;
+		this.wallet = wallet;
+		this.subscription_date = subscription_date;
+		this.expiry_date = expiry_date;
 	}
 	@Override
 	public String toString() {

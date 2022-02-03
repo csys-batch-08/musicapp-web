@@ -131,7 +131,7 @@ left: 145px;
 
           .gl:hover{
             background: rgb(109, 216, 235);
-           
+           height: 10x;
         }
 
 
@@ -240,7 +240,7 @@ text-align: center;
     
             <div class="mySlides fade">
          
-              <img src="Assets/okk3.jpg" style="width:80%" alt="can't load image">
+              <img src="Assets/wp9998324-ed-sheeran-album-wallpapers.jpg" style="width:80%" alt="can't load image">
             </div>
             
             
@@ -248,10 +248,9 @@ text-align: center;
                 <img src="Assets/wp2009638-avicii-wallpapers.jpg" style="width:80%" alt="can't load image">
             </div>
            
+          
             <div class="mySlides fade">
-        
-         
-            
+          
                <img src="Assets/unnamed.jpg" style="width:80%" alt="can't load image">
             </div>
             

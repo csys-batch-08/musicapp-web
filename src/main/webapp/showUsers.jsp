@@ -181,8 +181,10 @@ top:-25px;
 					<th>Password</th>
 					<th>Role</th>
 					<th>Mobile_Number</th>
-					<th>Wallet</th>
-					<th>DeleteUser</th>
+					<th>Wallet</th>					
+					<th>SubscriptionDate</th>
+					<th>ExpiryDate</th>
+					<th>InActive</th>
 					</tr>
 			</thead>
 			<br>
@@ -204,7 +206,9 @@ top:-25px;
 					<td>${Userlist.role}</td>
 					<td>${Userlist.mobileNumber}</td>
 					<td>${Userlist.wallet}</td>
-					<td><button class="btn btn-danger" ><a href="deleteuser?uname=${Userlist.userName}" id="del"> Delete</a></button></td>
+					<td>${Userlist.subscription_date}</td>
+					<td>${Userlist.expiry_date}</td>
+					<td><button class="btn btn-danger" ><a href="deleteuser?uname=${Userlist.userName}" id="del">InActive</a></button></td>
 					
 					
 			     </tr>

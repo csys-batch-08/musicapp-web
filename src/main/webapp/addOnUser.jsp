@@ -7,7 +7,7 @@
 
     <style>
         body{
-            background: url(Assets/guillaume-techer-Jm9P0mDPo6A-unsplash.jpg);
+            background: url(Assets/headphones_laptop_macbook_apple1.jpg);
             background-size: cover;
             background-repeat: no-repeat ;
             
@@ -40,9 +40,14 @@
         button:hover{
             background-color:rgb(109, 216, 235);
         }
-        label,h2,h3{
-            color: white;
+        label h2{
+            color: black;
         }
+        
+        h3{
+            color: black;
+        }
+        
         #male{
             margin-left: 0%;
             padding: 0 40px   ;
@@ -199,10 +204,10 @@ top:70px;
 
         <table id="signuptable" style="border-spacing: 5px;">
           <table id="signuptable" style="border-spacing: 5px;">
-          <center><h3>Enter present user email here</h3></center>  
+          <center><h3>Enter present user's Email Id here</h3></center>  
           <tr>
                 <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id"  required ></th>
+                <th><input type="email" name="UserEmail" id="emailId" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required ></th>
             </tr>
         
          

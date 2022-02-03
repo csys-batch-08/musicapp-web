@@ -206,7 +206,7 @@ top:70px;
         <table id="signuptable" style="border-spacing: 5px;">
             <tr>
                 <th><label for="SongId">Song Id:</label></th>
-                <th><input type="number" name="SongId" id="SongId" placeholder="Enter Song Id" pattern ="[0-9]{3}"required ></th>
+                <th><input type="number" name="SongId" id="SongId" placeholder="Enter Song Id" pattern ="[0-9]{3}"required autofocus></th>
             </tr>
             <tr>
                 <th><label for="SongTitle">Song Title:</label></th>

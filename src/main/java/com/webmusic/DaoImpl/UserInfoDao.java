@@ -14,7 +14,7 @@ public class UserInfoDao implements UserInfoInterface{
 	public void insertUser(UserInfo str) throws ClassNotFoundException, SQLException {
          
 		Connection con = ConnectionUtil.getDBconnect();
-		String query = " insert into User_Info( first_name,  last_name, email_Id, user_name, password, role, mobile_number,user_wallet)values (?,?,?,?,?,?,?,?)";
+		String query = " insert into User_Info( first_name,  last_name, email_Id, user_name, password, role, mobile_number,user_wallet,subscription_date,expiry_date )values (?,?,?,?,?,?,?,?,sysdate,sysdate+30)";
 
 		PreparedStatement stmt = con.prepareStatement(query);
 
@@ -75,7 +75,7 @@ public class UserInfoDao implements UserInfoInterface{
 	// List all users
 	public List<UserInfo> showAllUsers() {
 		List<UserInfo> userList = new ArrayList<UserInfo>();
-		String query = "select first_name,  last_name, email_Id, user_name, password, role, mobile_number,user_wallet from user_info";
+		String query = "select first_name,  last_name, email_Id, user_name, password, role, mobile_number,user_wallet, subscription_date,expiry_date  from user_info";
 		Connection con = null;
 		PreparedStatement stmt;
 		try {
@@ -84,7 +84,7 @@ public class UserInfoDao implements UserInfoInterface{
 			ResultSet rs = stmt.executeQuery();
 			while (rs.next()) {
 				UserInfo userInfo = new UserInfo(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getString(5), rs.getString(6), rs.getLong(7), rs.getDouble(8));
+						rs.getString(5), rs.getString(6), rs.getLong(7), rs.getDouble(8),rs.getDate(9).toLocalDate(),rs.getDate(10).toLocalDate());
 				userList.add(userInfo);
 			}
 
@@ -123,7 +123,7 @@ public class UserInfoDao implements UserInfoInterface{
     
 	// Switch to Premium
 	public int SwitchToPremium(UserInfo user) {
-		String query = "update user_info set role=? where email_id=?";
+		String query = "update user_info set role=?, subscription_date=sysdate, expiry_date=sysdate+90 where email_id=?";
 		Connection con;
 		int i = 0;
 		try {
@@ -150,13 +150,20 @@ public class UserInfoDao implements UserInfoInterface{
 	// Add on user to share premium account
 	public int AddOnUser(String emailId,UserInfo user) {
 		int i = 0;
-		String updateQuery = "update user_info set role='Premium',add_on=1 where email_id=?";
+		
+
+		String updateQuery = "update user_info set role='Premium',add_on=1, subscription_date=?,expiry_date=?   where email_id=?";
 		String updatePremium = "update user_info set add_on=1 where email_id='"+user.getEmailId()+"'";
+		
+		
 		
 		try {
 			Connection con = ConnectionUtil.getDBconnect();
 			PreparedStatement pstmt = con.prepareStatement(updateQuery);
-			pstmt.setString(1, emailId);
+			
+			pstmt.setDate(1, java.sql.Date.valueOf(user.getSubscription_date()));
+			pstmt.setDate(2, java.sql.Date.valueOf(user.getExpiry_date()));
+			pstmt.setString(3, emailId);
 			i = pstmt.executeUpdate();
 			System.out.println("user is updated to premium");
 			System.out.println(user.getEmailId());

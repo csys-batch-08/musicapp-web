@@ -206,12 +206,12 @@ top:70px;
         
             <tr>
                 <th><label for="SongTitle">Song Title:</label></th>
-                <th><input type="text" name="SongTitle" id="SongTitle" placeholder="Enter Song name" required ></th>
+                <th><input type="text" name="SongTitle" id="SongTitle" placeholder="Enter Song name" pattern = "[a-zA-Z]{3,30}" required ></th>
             </tr>
        
             <tr>
                 <th><label for="PlaylistTitle">Playlist Title:</label></th>
-                <th><input type="text" name="PlaylistTitle" id="PlaylistTitle" placeholder="Enter playlist Title" required ></th>
+                <th><input type="text" name="PlaylistTitle" id="PlaylistTitle" placeholder="Enter playlist Title" pattern = "[a-zA-Z][0-9]{3,30}" required ></th>
             </tr>
            
    
