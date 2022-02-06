@@ -205,7 +205,8 @@ top:70px;
 
         <table id="signuptable" style="border-spacing: 5px;">
         <br>
-          <center><h3> Pay 250Rs for premium</h3></center>  
+          <center><h3> Pay 250Rs for premium pack</h3></center> 
+          <center><h3> Pack validity 90 days</h3></center> 
         <table id="buttontable">
             <tr>
                 <td><button><a href="switch" class="switch">Subscribe</a></button></td>

@@ -13,8 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.webmusic.DaoImpl.LibraryDao;
-import com.webmusic.DaoImpl.LoginDao;
+import com.webmusic.daoimpl.LibraryDao;
+import com.webmusic.daoimpl.LoginDao;
 import com.webmusic.exception.LoginException;
 import com.webmusic.model.Admin;
 import com.webmusic.model.Library;
@@ -136,13 +136,10 @@ public class Login extends HttpServlet{
 			session.setAttribute("errors", e.getMessage());
 			res.sendRedirect("login.jsp");
 			
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 
 		e.printStackTrace();
-	} catch (SQLException e) {
-
-		e.printStackTrace();
-	}
+	} 
 		
 	}
 

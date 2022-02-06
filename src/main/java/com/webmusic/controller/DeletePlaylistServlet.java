@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.webmusic.DaoImpl.PlaylistDao;
+import com.webmusic.daoimpl.PlaylistDao;
 import com.webmusic.model.Playlist;
 
 @WebServlet("/DeletePlaylistServlet")
@@ -27,7 +27,7 @@ public class DeletePlaylistServlet extends HttpServlet {
 	
 		
 		PlaylistDao playlistDao = new PlaylistDao();
-        List<Playlist> showPlaylist = new ArrayList<Playlist>();
+        List<Playlist> showPlaylist = new ArrayList<>();
         showPlaylist = playlistDao.showAllPlaylist();
 
     	request.setAttribute("DeletePlaylist",showPlaylist);

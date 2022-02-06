@@ -1,8 +1,5 @@
 package com.webmusic.model;
 
-
-import java.util.Objects;
-
 public class Playlist {
 	private Library song;
 	private String playlistTitle;

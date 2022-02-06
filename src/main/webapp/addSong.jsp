@@ -1,4 +1,8 @@
+
+
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -201,12 +205,13 @@ top:70px;
 
 	<form action="addSongs" id="addsongs">
     <fieldset class="songadd">
+    <legend>Add Song</legend>
        <center><h2>Add Song</h2></center>
 
         <table id="signuptable" style="border-spacing: 5px;">
             <tr>
-                <th><label for="SongId">Song Id:</label></th>
-                <th><input type="number" name="SongId" id="SongId" placeholder="Enter Song Id" pattern ="[0-9]{3}"required autofocus></th>
+                <th id="songid"><label for="SongId">Song Id:</label></th>
+                <th id="songid"><input type="number" name="SongId" id="SongId" placeholder="Enter Song Id" pattern ="[0-9]{3}"required autofocus></th>
             </tr>
             <tr>
                 <th><label for="SongTitle">Song Title:</label></th>

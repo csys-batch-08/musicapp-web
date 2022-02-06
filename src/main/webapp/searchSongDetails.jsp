@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
                <%@page import="com.webmusic.model.Library"%>
     <%@page import="java.util.*"%>
-            <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
+            <%@page import="com.webmusic.daoimpl.LibraryDao"%>
  <%@page import="com.webmusic.model.UserInfo"%>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>

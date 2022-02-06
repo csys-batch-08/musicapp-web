@@ -1,13 +1,17 @@
 package com.webmusic.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.webmusic.DaoImpl.LibraryDao;
-import com.webmusic.DaoImpl.PlaylistDao;
+import com.webmusic.daoimpl.LibraryDao;
+import com.webmusic.daoimpl.PlaylistDao;
 import com.webmusic.model.Library;
 import com.webmusic.model.Playlist;
 import com.webmusic.model.UserInfo;
@@ -40,7 +44,17 @@ public class AddPlaylist extends HttpServlet {
 			playDao.insertPlaylist(playlist);
 			 if(playDao!=null) {
 //					res.getWriter().print("Your Playlist added.!");
-                    res.sendRedirect("PlaylistUserServlet");
+                   
+				 PlaylistDao playlistadd = new PlaylistDao();
+			        List<Playlist> showPlaylist = new ArrayList<Playlist>();
+			        showPlaylist = playlistadd.showAllPlaylist();
+
+			    	req.setAttribute("AllPlaylist",showPlaylist);
+					RequestDispatcher rd=req.getRequestDispatcher("showPlaylistUser.jsp?AddedStatus=success");	
+					rd.forward(req, res);
+				 
+				 
+//				 res.sendRedirect("PlaylistUserServlet");
 				}
 				else 
 				{

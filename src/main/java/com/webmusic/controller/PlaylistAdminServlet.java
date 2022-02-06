@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.webmusic.DaoImpl.PlaylistDao;
+import com.webmusic.daoimpl.PlaylistDao;
 import com.webmusic.model.Playlist;
 
 
@@ -26,7 +26,7 @@ public class PlaylistAdminServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		PlaylistDao playlistDao = new PlaylistDao();
-        List<Playlist> showPlaylist = new ArrayList<Playlist>();
+        List<Playlist> showPlaylist = new ArrayList<>();
         showPlaylist = playlistDao.showAllPlaylist();
 
     	request.setAttribute("AllPlaylistAdmin",showPlaylist);

@@ -156,12 +156,9 @@
 </head>
 
 <body>
-    <%String message=(String) session.getAttribute("errors");
-    if(message!=null){
-    %>
-   <center><h2><%=message %></h2></center>
-    <%} %>
-    <div class="background"></div>
+   
+  
+   <div class="background"></div>
     <div class="container">
         
         <p class="p"><h1>Login</h1></p>
@@ -192,6 +189,12 @@
         </form>
 
     </div>
+
+  <div align="center">
+    <c:if test="${errors!=null}">
+   				<center><h2><i>${errors}</h2></i></center>
+   
+   </c:if></div>
 
 </body>
 

@@ -5,10 +5,10 @@
     pageEncoding="ISO-8859-1"%>
                <%@page import="com.webmusic.model.Library"%>
     <%@page import="java.util.List"%>
-            <%@page import="com.webmusic.DaoImpl.LibraryDao"%>
+            <%@page import="com.webmusic.daoimpl.LibraryDao"%>
             <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Admin page</title>
@@ -173,7 +173,7 @@ top:-25px;
 </div>
     </div>
  
-<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
+<div><img id="logo" src="Assets/images/MWlogoo.png"  alt="Couldn't load"></div>
 
 
 

@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.webmusic.DaoImpl.UserInfoDao;
+import com.webmusic.daoimpl.UserInfoDao;
 import com.webmusic.model.UserInfo;
 
 @WebServlet("/recharge")

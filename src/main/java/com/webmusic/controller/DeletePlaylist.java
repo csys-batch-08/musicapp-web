@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.webmusic.DaoImpl.LibraryDao;
-import com.webmusic.DaoImpl.PlaylistDao;
+import com.webmusic.daoimpl.LibraryDao;
+import com.webmusic.daoimpl.PlaylistDao;
 import com.webmusic.model.Playlist;
 import com.webmusic.model.UserInfo;
 
@@ -48,10 +48,7 @@ public class DeletePlaylist extends HttpServlet {
 			}else {
 				response.getWriter().print("You'r playlist is not deleted!!");
 			}
-		} catch (ClassNotFoundException e) {
-
-			e.printStackTrace();
-		} catch (SQLException e) {
+		}  catch (Exception e) {
 
 			e.printStackTrace();
 		}

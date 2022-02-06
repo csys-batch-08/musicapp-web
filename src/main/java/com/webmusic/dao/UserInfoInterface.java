@@ -1,4 +1,4 @@
-package com.webmusic.Dao;
+package com.webmusic.dao;
 
 import java.sql.SQLException;
 import java.util.List;

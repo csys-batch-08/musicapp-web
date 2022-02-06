@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.webmusic.DaoImpl.UserInfoDao;
+import com.webmusic.daoimpl.UserInfoDao;
 import com.webmusic.model.UserInfo;
 
 @WebServlet("/ShowUserServlet")

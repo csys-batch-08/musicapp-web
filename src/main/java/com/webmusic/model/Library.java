@@ -1,9 +1,5 @@
 package com.webmusic.model;
 
-
-import java.util.Date;
-import java.util.Objects;
-
 public class Library {
 	 private int songId;
 	 private String songTitle;

@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
   <%@page import="com.webmusic.model.UserInfo"%>
     <%@page import="java.util.*"%>
-            <%@page import="com.webmusic.DaoImpl.UserInfoDao"%>
+            <%@page import="com.webmusic.daoimpl.UserInfoDao"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="en">
@@ -210,7 +210,7 @@ top:70px;
 
 	<form action="Update">
     <fieldset class="signup" id="addsongs">
-       <center><h2>Update details here!</h2></center>
+       <center><h3><b>Update details here!</b></h3></center>
 
         <table id="signuptable" style="border-spacing: 5px;">
             <tr>
@@ -242,7 +242,29 @@ top:70px;
             <tr>
                 <th><label for="mobile">Mobile Number:</label></th>
                 <th><input type="number" name="MobileNumber" id="mobile" value="${premiumUser.mobileNumber}" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
-            </tr>         
+            </tr>  
+            
+            
+            <tr>
+                <th><label for="mobile">Wallet (Rs):</label></th>
+                <th><input type="number" name="wallet" id="userwallet" value="${premiumUser.wallet}" readonly="readonly"></th>
+            </tr>  
+            
+            
+            
+             <tr>
+                <th><label for="mobile">Subscription Date:</label></th>
+                <th><input type="date" name="subsDate" id="subDate" value="${premiumUser.subscription_date}"  readonly="readonly"></th>
+            </tr>  
+            
+             <tr>
+                <th><label for="mobile">Pack Expiry Date:</label></th>
+                <th><input type="date" name="expDate" id="expdate" value="${premiumUser.expiry_date}"  readonly="readonly"></th>
+            </tr>  
+            
+            
+            
+                   
         </table>
        
         <table id="buttontable">

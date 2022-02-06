@@ -1,4 +1,4 @@
-package com.webmusic.Dao;
+package com.webmusic.dao;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -9,7 +9,7 @@ public interface LibraryInterface {
 	
 	public void insertLibrary(Library str3) throws ClassNotFoundException, SQLException;
 	
-	public void showSongs(Library show) throws ClassNotFoundException, SQLException;
+	//public void showSongs(Library show) throws ClassNotFoundException, SQLException;
 	
 	public void update(Library up) throws ClassNotFoundException, SQLException;
 	

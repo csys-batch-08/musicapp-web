@@ -9,8 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import com.webmusic.DaoImpl.UserInfoDao;
+import com.webmusic.daoimpl.UserInfoDao;
 
 
 @WebServlet("/deleteuser")
@@ -30,7 +29,7 @@ public class DeleteUserServlet extends HttpServlet {
 		UserInfoDao userdao=new UserInfoDao();
 		try {
 			userdao.delete(UserName);
-		} catch (ClassNotFoundException | SQLException e) {
+		} catch (Exception e) {
 
 			e.printStackTrace();
 		}

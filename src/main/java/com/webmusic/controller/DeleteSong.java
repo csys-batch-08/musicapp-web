@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.webmusic.DaoImpl.LibraryDao;
+import com.webmusic.daoimpl.LibraryDao;
 
 @WebServlet("/deletesong")
 public class DeleteSong extends HttpServlet {
@@ -44,13 +44,10 @@ public class DeleteSong extends HttpServlet {
 			
 			
 			
-		} catch (ClassNotFoundException e) {
+		} catch (Exception e) {
 
 			e.printStackTrace();
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
+		} 
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
