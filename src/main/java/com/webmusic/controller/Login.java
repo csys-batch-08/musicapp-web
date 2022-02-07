@@ -53,13 +53,9 @@ public class Login extends HttpServlet{
 					
 					try {
 						rd.forward(req, res);
-					} catch (ServletException e) {
-
+					} catch (Exception e) {
 						e.printStackTrace();
-					} catch (IOException e) {
-
-						e.printStackTrace();
-					}
+					} 
 				}
 				else if(admin==null)
 				{
@@ -81,13 +77,10 @@ public class Login extends HttpServlet{
 					
 					try {
 						rd.forward(req, res);
-					} catch (ServletException e) {
+					} catch (Exception e) {
 
 						e.printStackTrace();
-					} catch (IOException e) {
-
-						e.printStackTrace();
-					}
+					} 
 					}
 					else 
 					{
@@ -102,13 +95,9 @@ public class Login extends HttpServlet{
 		
 						try {
 							rd.forward(req, res);
-						} catch (ServletException e) {
-
+						} catch (Exception e) {
 							e.printStackTrace();
-						} catch (IOException e) {
-
-							e.printStackTrace();
-						}
+						} 
 						
 						
 					}

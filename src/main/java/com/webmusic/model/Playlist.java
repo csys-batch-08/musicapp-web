@@ -1,6 +1,8 @@
 package com.webmusic.model;
 
-public class Playlist {
+import java.io.Serializable;
+
+public class Playlist implements Serializable {
 	private Library song;
 	private String playlistTitle;
 	private String emailId;
@@ -31,11 +33,9 @@ public class Playlist {
 	}
 	public Playlist() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public Playlist( Library song, String playlistTitle, String emailId) {
 		super();
-		//this.playlistId = playlistId;
 		this.song = song;
 		this.playlistTitle = playlistTitle;
 		this.emailId = emailId;

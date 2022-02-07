@@ -21,17 +21,13 @@ import com.webmusic.model.UserInfo;
 public class AddPlaylist extends HttpServlet {
 
 
+	@Override
 	public void service(HttpServletRequest req, HttpServletResponse res) {
 
-		try {
-			
+		try {		
 			PlaylistDao playlistDao = new PlaylistDao();
 			String songTitle = req.getParameter("SongTitle");
-			System.out.println(songTitle);
-			
-
 			String playlistTitle = req.getParameter("PlaylistTitle");
-			System.out.println(playlistTitle);
 
 			LibraryDao libDao = new  LibraryDao();
 			Library lib=libDao.findSong(songTitle);
@@ -42,19 +38,17 @@ public class AddPlaylist extends HttpServlet {
 			Playlist playlist = new Playlist(lib, playlistTitle,premiumUser.getEmailId() );
 			PlaylistDao playDao = new PlaylistDao();			
 			playDao.insertPlaylist(playlist);
-			 if(playDao!=null) {
-//					res.getWriter().print("Your Playlist added.!");
-                   
+			
+			if(playDao!=null) {
+                  
 				 PlaylistDao playlistadd = new PlaylistDao();
-			        List<Playlist> showPlaylist = new ArrayList<Playlist>();
+			        List<Playlist> showPlaylist = new ArrayList<>();
 			        showPlaylist = playlistadd.showAllPlaylist();
 
 			    	req.setAttribute("AllPlaylist",showPlaylist);
 					RequestDispatcher rd=req.getRequestDispatcher("showPlaylistUser.jsp?AddedStatus=success");	
 					rd.forward(req, res);
 				 
-				 
-//				 res.sendRedirect("PlaylistUserServlet");
 				}
 				else 
 				{
@@ -73,16 +67,12 @@ public class AddPlaylist extends HttpServlet {
 				}
 				else 
 				{
-					res.getWriter().print("Playlist is Not added");
-			
+					res.getWriter().print("Playlist is Not added");			
 			}
 			}
 		}
 			 catch (Exception e) {
-				System.out.println(e.getMessage());
-			} 
-			
-		
+				 e.getMessage();
+			} 	
 	}
-
 }

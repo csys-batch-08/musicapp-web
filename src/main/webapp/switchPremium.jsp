@@ -159,14 +159,15 @@ table.center {
 	position: absolute;
 	top: 70px;
 }
-h2,h3{
-text-align: center;
+
+h2, h3 {
+	text-align: center;
 }
 </style>
 </head>
 <body>
 	<div id="nav">
-		<ul>
+		<ul type="none">
 			<li><a href=""ShowSongServlet">SongList</a></li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
@@ -185,38 +186,35 @@ text-align: center;
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
-				<label for="songdetails"></label>
-				<input type="text" name="Song_Title"
-					id="songdetails"
+				<label for="songdetails"></label> <input type="text"
+					name="Song_Title" id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
-		</div >
-		<div>
+		</div>
+	</div>
+	<div>
 		<img id="logo" src="Assets/images/MWlogoo.png" alt="could'nt load">
 	</div>
-</div>
-	
-<form action="switch">
-	<fieldset class="signup" id="addsongs">
-			<br>
-			<br><br>
-			<br>
-				<h2>Subscribe here to switch premium!</h2>
-			     <table id="signuptable" style="border-spacing: 5px;">
+	<form action="switch">
+		<fieldset class="signup" id="addsongs">
+			<br> <br>
+			<br> <br>
+			<h2>Subscribe here to switch premium!</h2>
+			<table id="signuptable" style="border-spacing: 5px;">
 				<br>
-					<h3>Pay 250Rs for premium pack</h3>
-					<h3>Pack validity 90 days</h3>
-				     
-				    <table id="buttontable">
+				<h3>Pay 250Rs for premium pack</h3>
+				<h3>Pack validity 90 days</h3>
+
+				<table id="buttontable">
+				<caption></caption>
+				<th id="button">
 					<tr>
-						<td><button>
-								<a href="switch" class="switch">Subscribe</a>
-							</button></td>
+						<td><button type="submit">Subscribe</button></td>
 					</tr>
-				    </table>
-				 </table>
-			</fieldset>
+				</table>
+			</table>
+		</fieldset>
 	</form>
 </body>
 </html>

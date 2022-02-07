@@ -161,14 +161,14 @@ a:hover {
 		<form action="login">
 			<div class="form-item">
 				<span class="material-icons-outlined"> </span> 
-				   <label for="text">
+				   <label for="text"></label>
 				   <input type="text"
 					name="text" id="text" placeholder="Enter Email Id"
 					pattern="[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required>
 			</div>
 			<div class="form-item">
 				<span class="material-icons-outlined"> </span> 
-				    <label for="pass">
+				    <label for="pass"></label>
 				   <input
 					type="password" name="pass" id="pass" placeholder="Enter Password"
 					pattern="[a-zA-Z0-9@#]{5,10}" required>

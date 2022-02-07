@@ -12,6 +12,7 @@ import com.webmusic.model.Library;
 public class AddSongs extends HttpServlet {
 
 
+	@Override
 	public void service(HttpServletRequest req, HttpServletResponse res) {
 
 		try {
@@ -50,7 +51,7 @@ public class AddSongs extends HttpServlet {
 					res.getWriter().print("Song is not added");
 				}
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+			   e.getMessage();
 			} 
 			
 		

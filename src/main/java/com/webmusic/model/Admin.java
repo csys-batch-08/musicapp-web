@@ -1,9 +1,10 @@
 package com.webmusic.model;
 
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Admin {
+public class Admin implements Serializable {
       private String userName;
       private String password;
       private long mobileNumber;
@@ -53,7 +54,7 @@ public class Admin {
 	}
 	public Admin() {
 		super();
-		// TODO Auto-generated constructor stub
+
 	}
       
  }

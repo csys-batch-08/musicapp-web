@@ -1,6 +1,8 @@
 package com.webmusic.model;
 
-public class Library {
+import java.io.Serializable;
+
+public class Library implements Serializable{
 	 private int songId;
 	 private String songTitle;
 	 private String artists;
@@ -102,7 +104,6 @@ public class Library {
 	}
 	public Library() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	

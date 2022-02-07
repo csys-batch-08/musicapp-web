@@ -1,9 +1,10 @@
 package com.webmusic.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class UserInfo {
+public class UserInfo implements Serializable{
 	private String firstName;
 	private String lastName;
 	private String emailId;
@@ -128,7 +129,6 @@ public class UserInfo {
 	}
 	public UserInfo() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	
