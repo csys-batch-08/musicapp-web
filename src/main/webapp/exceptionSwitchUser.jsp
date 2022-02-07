@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>page for add on user limit</title>
@@ -19,9 +19,9 @@
 <form action="login.jsp">
 <centre>
 <br><br>
-<center><h1>Thank you for subscribing..!</h1></center>
+<div><h1>Thank you for subscribing..!</h1></div>
 <br><br>
-<h2><i>You'r now successfully switched as a premium user<i></i></h2>
+<h2><em>You'r now successfully switched as a premium user</em></h2>
 <br>
 <button class="btn btn-primary btn-block" id="" type="submit">Get back to Login page</button>
 </centre>

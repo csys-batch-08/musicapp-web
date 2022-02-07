@@ -37,20 +37,6 @@ public class LibraryDao implements LibraryInterface {
 		}
 	}
 
-	/*
-	 * // Show song details public void showSongs(Library show){ Connection
-	 * con=null; PreparedStatement stmt=null; try { String query =
-	 * "select song_id,  song_title, artists, album, genre, language,song_file,song_image from library"
-	 * ; con = ConnectionUtil.getDBconnect(); stmt = con.prepareStatement(query);
-	 * ResultSet rs = stmt.executeQuery(); while (rs.next()) {
-	 * System.out.println("\n" + rs.getInt(1) + "\n" + rs.getString(2) + "\n" +
-	 * rs.getString(3) + "\n" + rs.getString(4) + "\n" + rs.getString(5) + "\n" +
-	 * rs.getString(6) + "\n" + rs.getString(7) + "\n" + rs.getString(8)); } }catch
-	 * (Exception e) { e.printStackTrace(); } finally { ConnectionUtil.close(con,
-	 * stmt); }
-	 * 
-	 * }
-	 */
 
 	// Update song details
 	public void update(Library up) {

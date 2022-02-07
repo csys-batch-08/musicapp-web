@@ -4,7 +4,7 @@
     <%@page import="java.util.*"%>
             <%@page import="com.webmusic.daoimpl.UserInfoDao"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -160,19 +160,12 @@ top:-25px;
 position: absolute;
 top:70px;
 }
-  
-        
-        
-        
+       
     </style>
 </head>
 <body>
-
 <div id="nav">
-
-        <ul type="none">
-            
-      
+        <ul type="none">     
             <li><a href ="ShowSongPremiumUser">SongList</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
@@ -191,87 +184,66 @@ top:70px;
             <li><a href ="updatePremiumUser.jsp">Update Details</a></li>
                 <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="PremiumHomeServlet">Home</a></li>
-        
+            <li><a href ="PremiumHomeServlet">Home</a></li>       
         </ul>
         <div id="search">
 <form action="Search" method="get" style="text-align: center;">
-
 <input type="text" name = "Song_Title"  placeholder="Search for Music which you love..">
-
 <button type="submit">Search</button>
 </form>
 </div>
     </div>
- 
-<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
-            
-            
-
+<div><img id="logo" src="Assets/images/MWlogoo.png" alt="could'nt load"></div>
 	<form action="Update">
     <fieldset class="signup" id="addsongs">
-       <center><h3><b>Update details here!</b></h3></center>
-
+    <legend></legend>
+       <center><h3><strong>Update details here!</strong></h3></center>
         <table id="signuptable" style="border-spacing: 5px;">
+        <caption></caption>
             <tr>
-                <th><label for="name">First Name:</label></th>
-                <th><input type="text" name="FirstName" id="name" value="${premiumUser.firstName}" placeholder="Enter your first name"  pattern = "[a-zA-Z]{3,30}" required autofocus></th>
+                <th id="fname"><label for="name">First Name:</label></th>
+                <th id="fname"><input type="text" name="FirstName" id="name" value="${premiumUser.firstName}" placeholder="Enter your first name"  pattern = "[a-zA-Z]{3,30}" required autofocus></th>
             </tr>
             <tr>
-                <th><label for="name">Last Name:</label></th>
-                <th><input type="text" name="LastName" id="name" value="${premiumUser.lastName}" placeholder="Enter your last name"  pattern = "[a-zA-Z]{3,30}" required></th>
-            </tr>
-           
+                <th id="lname"><label for="name">Last Name:</label></th>
+                <th id="lname"><input type="text" name="LastName" id="name" value="${premiumUser.lastName}" placeholder="Enter your last name"  pattern = "[a-zA-Z]{3,30}" required></th>
+            </tr>           
             <tr>
-                <th><label for="emailId">Email Id:</label></th>
-                <th><input type="email" name="UserEmail" id="emailId" value="${premiumUser.emailId}" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required ></th>
-            </tr>
-           
-                    
+                <th id="mailid"><label for="emailId">Email Id:</label></th>
+                <th id="mailid"><input type="email" name="UserEmail" id="emailId" value="${premiumUser.emailId}" placeholder="Enter email Id" pattern = "[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required ></th>
+            </tr>                   
            <tr>
-                <th><label for="name">User Name:</label></th>
-                <th><input type="text" name="UserName" id="name" value="${premiumUser.userName}" placeholder="Enter user name"  pattern ="[a-z]{2,20}" required ></th>
-            </tr>
-            
-                                  
+                <th id="uname"><label for="name">User Name:</label></th>
+                <th id="uname"><input type="text" name="UserName" id="name" value="${premiumUser.userName}" placeholder="Enter user name"  pattern ="[a-z]{2,20}" required ></th>
+            </tr>                               
             <tr>
-                <th><label for="password">Password:</label></th>
-                <th><input type="password" name="UserPassword" id="password" value="${premiumUser.password}" placeholder="********"  pattern = "[a-zA-Z0-9@#]{5,10}" required ></th>
-            </tr>
-           
+                <th id="password"><label for="password">Password:</label></th>
+                <th id="password"><input type="password" name="UserPassword" id="password" value="${premiumUser.password}" placeholder="********"  pattern = "[a-zA-Z0-9@#]{5,10}" required ></th>
+            </tr>          
             <tr>
-                <th><label for="mobile">Mobile Number:</label></th>
-                <th><input type="number" name="MobileNumber" id="mobile" value="${premiumUser.mobileNumber}" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
-            </tr>  
-            
-            
+                <th id="mobnum"><label for="mobile">Mobile Number:</label></th>
+                <th id="mobnum"><input type="number" name="MobileNumber" id="mobile" value="${premiumUser.mobileNumber}" placeholder="Enter mobile number" pattern ="[0-9]{10}" required></th>
+            </tr>            
             <tr>
-                <th><label for="mobile">Wallet (Rs):</label></th>
-                <th><input type="number" name="wallet" id="userwallet" value="${premiumUser.wallet}" readonly="readonly"></th>
-            </tr>  
-            
-            
-            
+                <th id="wallet"><label for="wallet">Wallet (Rs):</label></th>
+                <th id="wallet"><input type="number" name="wallet" id="userwallet" value="${premiumUser.wallet}" readonly="readonly"></th>
+            </tr>           
              <tr>
-                <th><label for="mobile">Subscription Date:</label></th>
-                <th><input type="date" name="subsDate" id="subDate" value="${premiumUser.subscription_date}"  readonly="readonly"></th>
-            </tr>  
-            
+                <th id="subdate"><label for="subdate">Subscription Date:</label></th>
+                <th id="subdate"><input type="date" name="subsDate" id="subDate" value="${premiumUser.subscription_date}"  readonly="readonly"></th>
+            </tr>           
              <tr>
-                <th><label for="mobile">Pack Expiry Date:</label></th>
-                <th><input type="date" name="expDate" id="expdate" value="${premiumUser.expiry_date}"  readonly="readonly"></th>
-            </tr>  
-            
-            
-            
-                   
-        </table>
-       
+                <th id="expdate"><label for="expdate">Pack Expiry Date:</label></th>
+                <th id="expdate"><input type="date" name="expDate" id="expdate" value="${premiumUser.expiry_date}"  readonly="readonly"></th>
+            </tr>                  
+        </table>     
         <table id="buttontable">
+        <caption></caption>
+        <th id="button">
             <tr>
-                <td><button type="submit">Click to Update Details</button></td>
-                  
+                <td><button type="submit">Click to Update Details</button></td>                
             </tr>
+            </th>
         </table>    
     </fieldset>
     </form>

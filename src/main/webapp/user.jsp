@@ -6,7 +6,6 @@
 <%@page import="com.webmusic.model.Library"%>
 <%@page import="java.util.List"%>
 <%@page import="com.webmusic.daoimpl.LibraryDao"%>
-
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
@@ -183,9 +182,7 @@ body {
 <body>
 <body style="background-color: lightblue">
 	<div id="nav">
-
 		<ul type="none">
-
 			<li><a href="ShowSongServlet" class="gl">SongList</a></li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
@@ -199,88 +196,60 @@ body {
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li><a href="login.jsp" class="gl">Logout</a></li>
-
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
-
 				<input type="text" name="Song_Title"
 					placeholder="Search for Music which you love..">
-
 				<button type="submit">Search</button>
 			</form>
 		</div>
 	</div>
-
 	<div>
 		<img id="logo" src="Assets/images/MWlogoo.png" alt="can't load image">
 	</div>
-
 	<div id="image">
-
-		<br>
-		<br>
+		<br> <br>
 		<div class="slideshow-container">
-
 			<div class="mySlides fade">
-
 				<img src="Assets/images/okk3.jpg" style="width: 80%"
 					alt="can't load image">
 			</div>
-
-
 			<div class="mySlides fade">
 				<img src="Assets/images/wp2009638-avicii-wallpapers.jpg"
 					style="width: 80%" alt="can't load image">
 			</div>
-
 			<div class="mySlides fade">
-
-
-
 				<img src="Assets/images/unnamed.jpg" style="width: 80%"
 					alt="can't load image">
 			</div>
-
-
 			<div class="mySlides fade">
-
 				<img src="Assets/images/AW.jpg" style="width: 80%"
 					alt="can't load image">
 			</div>
-
 			<div class="mySlides fade">
 				<img src="Assets/images/suriya.jpg" style="width: 80%"
 					alt="can't load image">
 			</div>
-
 			<div class="mySlides fade">
-
 				<img src="Assets/images/marshmello.jpg" style="width: 80%"
 					alt="can't load image">
 			</div>
-
-
-
 		</div>
 	</div>
-
-
 	<p style="text-align: center;" id="user">Welcome
 		${currentUser.firstName}</p>
-
-
-
 	<table id="user">
-
+		<caption></caption>
+		<th id="user">
 		<tbody>
 			<tr>
 				<c:set var="count" value="0" />
 				<c:forEach items="${AllSongs}" var="userHome">
-
-
 					<td>
 						<table id="songs">
+							<caption></caption>
+							<th id="songs">
 							<tbody>
 								<tr>
 									<td><img src="Assets/images/${userHome.songImage}"
@@ -296,13 +265,10 @@ body {
 								</tr>
 								</tr>
 							</tbody>
+							</th>
 						</table>
-
 					</td>
-
 					<c:set var="count" value="${count + 1}" scope="page" />
-
-
 					<c:choose>
 						<c:when test="${count==3}">
 			</tr>
@@ -312,18 +278,14 @@ body {
 				</c:choose>
 				</c:forEach>
 			</tr>
-
 		</tbody>
+		</th>
 	</table>
-
-
 </body>
 </html>
-
 <script>
 	var slideIndex = 0;
 	showSlides();
-
 	function showSlides() {
 		var i;
 		var slides = document.getElementsByClassName("mySlides");
@@ -335,9 +297,7 @@ body {
 		if (slideIndex > slides.length) {
 			slideIndex = 1
 		}
-
 		slides[slideIndex - 1].style.display = "block";
-
 		setTimeout(showSlides, 2500); // Change image every 2.5 seconds
 	}
 

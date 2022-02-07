@@ -6,7 +6,7 @@
  <%@page import="com.webmusic.model.UserInfo"%>
   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Search page</title>
@@ -26,61 +26,44 @@
  width: 80px;
  }  
  </style>
- 
-
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
- 
 </head>
 <body style="background: url(Assets/images/hello-i-m-nik-ZJpjMmc351s-unsplash.jpg)">
-
-
-
 		<table class="table table-dark table-hover" id="allsongs">
-			
+		<caption></caption>		
 			<thead>
-				<tr>
-			
-					<th>Song_id</th> 
-					<th>Song_title</th>
-					<th>Artists</th>
-					<th>Album</th>
-					<th>Genre</th>
-					<th>Language</th>
-					<th>Play_Song</th>
-					<th>Image_Song </th>
-					
+				<tr>		
+					<th id="songid">Song_id</th> 
+					<th id="songtitle">Song_title</th>
+					<th id="songartist">Artists</th>
+					<th id="songalbum">Album</th>
+					<th id="songgenre">Genre</th>
+					<th id="songlang">Language</th>
+					<th id="songplay">Play_Song</th>
+					<th id="songimage">Image_Song </th>					
 					</tr>
 			</thead>
 			<br>
-			<br>
-			
+			<br>			
 						<tbody>
 				           <c:forEach items="${songname}" var ="SongSearch">
-				<tr>
-				
-			
-					
+				<tr>					
 				    <td>${SongSearch.songId}</td>
 					<td>${SongSearch.songTitle}</td>				
 					<td>${SongSearch.artists}</td>				
 					<td>${SongSearch.album}</td>
 					<td>${SongSearch.genre}</td>
-					<td>${SongSearch.language}</td>
-				 
+					<td>${SongSearch.language}</td>			 
 					<td><audio  controls>
 					<source src="Assets/songs/${SongSearch.songFile}" >
 					</audio>
 					</td>
-					<td><img id="img" src="Assets/images/${SongSearch.songImage}" alt="Couldn't load"></td>
-				
-					
+					<td><img id="img" src="Assets/images/${SongSearch.songImage}" alt="Couldn't load"></td>					
 			</tr>
 			      </c:forEach>
 					</tbody>
-		           </table>
-			
-	
+		           </table>	
 </body>
 </html>
 <script>

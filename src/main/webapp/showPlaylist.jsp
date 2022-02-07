@@ -7,7 +7,7 @@
 <%@page import="com.webmusic.daoimpl.LibraryDao"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>All Users playlist page</title>
@@ -129,24 +129,16 @@ table.center {
 	background: rgb(109, 216, 235);
 }
 </style>
-
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
-
 <body
 	style="background: url(Assets/images/headphones_laptop_macbook_apple1.jpgss)">
-
 	<div id="navs">
-
 		<ul type="none">
-
-
-
 			<li><a href="ShowUserServlet">ManageUsers</a></li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
@@ -166,60 +158,47 @@ table.center {
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li><a href="AdminHomeServlet">Home</a></li>
-
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
-
 				<input type="text" name="Song_Title"
 					placeholder="Search for Music which you love..">
-
 				<button type="submit">Search</button>
 			</form>
 		</div>
 	</div>
-
 	<div>
-		<img id="logo" src="Assets/images/MWlogoo.png">
+		<img id="logo" src="Assets/images/MWlogoo.png" alt="could'nt load">
 	</div>
-
 	<br>
 	<br>
-
 	<h2>
-		<b><center>All Users Playlist</center></b>
+		<strong><center>All Users Playlist</center></strong>
 	</h2>
 	<table class="table table-dark table-hover" id="allsongs">
+	<caption></caption>
 		<thead>
 			<tr>
-				<th>S.no</th>
-				<th>Song_Details</th>
-				<th>Playlist_Name</th>
-				<th>Email_Id</th>
+				<th id="s.no">S.no</th>
+				<th id="songdetails">Song_Details</th>
+				<th id="plname">Playlist_Name</th>
+				<th id="mailid">Email_Id</th>
 			</tr>
 		</thead>
 		<br>
 		<br>
-
 		<tbody>
-
 			<c:forEach items="${AllPlaylistAdmin}" var="AdminPlaylist">
 				<c:set var="i" value="${i+1 }" />
 				<tr>
-
 					<td>${i}</td>
 					<td>${AdminPlaylist.song}</td>
 					<td>${AdminPlaylist.playlistTitle}</td>
 					<td>${AdminPlaylist.emailId}</td>
-
 				</tr>
-
 			</c:forEach>
-
 		</tbody>
 	</table>
-
-
 </body>
 </html>
 </body>

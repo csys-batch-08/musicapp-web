@@ -5,14 +5,13 @@
 <%@page import="java.util.*"%>
 <%@page import="com.webmusic.daoimpl.PlaylistDao"%>
 <%@page import="com.webmusic.daoimpl.LibraryDao"%>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Add song page</title>
-
-
 <style>
 body {
 	background: url(Assets/images/markus-spiske-hU9gx8YfVK4-unsplash.jpg);
@@ -164,12 +163,8 @@ table.center {
 </style>
 </head>
 <body>
-
 	<div id="nav">
-
 		<ul type="none">
-
-
 			<li><a href="ShowSongPremiumUser">SongList</a></li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
@@ -189,56 +184,44 @@ table.center {
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li><a href="PremiumHomeServlet">Home</a></li>
-
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
-
 				<input type="text" name="Song_Title"
 					placeholder="Search for Music which you love..">
-
 				<button type="submit">Search</button>
 			</form>
 		</div>
 	</div>
-
 	<div>
-		<img id="logo" src="Assets/images/MWlogoo.png">
+		<img id="logo" src="Assets/images/MWlogoo.png" alt="could'nt load">
 	</div>
-
-
-
 	<form action="addPlaylist">
 		<fieldset class="playlistadd" id="addsongs">
-
+		<legend></legend>
 			<br>
 			<br>
 			<center>
 				<h2>Add Playlist</h2>
 			</center>
-
 			<table id="signuptable" style="border-spacing: 5px;">
-
+			<caption></caption>
 				<tr>
-					<th><label for="SongTitle">Song Title:</label></th>
-					<th><input type="text" name="SongTitle" id="SongTitle"
+					<th id="SongTitle"><label for="SongTitle">Song Title:</label></th>
+					<th id="SongTitle"><input type="text" name="SongTitle" id="SongTitle"
 						placeholder="Enter Song name" pattern="[a-zA-Z]{3,30}" required></th>
 				</tr>
-
 				<tr>
-					<th><label for="PlaylistTitle">Playlist Title:</label></th>
-					<th><input type="text" name="PlaylistTitle" id="PlaylistTitle"
+					<th id="plTitle"><label for="PlaylistTitle">Playlist Title:</label></th>
+					<th id="plTitle"><input type="text" name="PlaylistTitle" id="PlaylistTitle"
 						placeholder="Enter playlist Title" pattern="[a-zA-Z][0-9]+{3,30}"
 						required></th>
 				</tr>
-
-
-
 				<table id="buttontable">
 					<tr>
 						<td><button type="submit">Click to Add Playlist</button></td>
-
 					</tr>
+					</table>
 				</table>
 				</fieldset>
 				</form>

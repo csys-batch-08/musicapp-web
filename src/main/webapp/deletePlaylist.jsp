@@ -7,7 +7,7 @@
 <%@page import="com.webmusic.daoimpl.LibraryDao"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Delete playlist page</title>
@@ -142,13 +142,8 @@ table.center {
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body style="background-color: lightblue">
-
 	<div id="navs">
-
 		<ul type="none">
-
-
-
 			<li><a href="ShowSongPremiumUser">SongList</a></li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
@@ -168,7 +163,6 @@ table.center {
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li><a href="PremiumHomeServlet">Home</a></li>
-
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
@@ -180,37 +174,31 @@ table.center {
 			</form>
 		</div>
 	</div>
-
 	<div>
-		<img id="logo" src="Assets/images/MWlogoo.png">
+		<img id="logo" src="Assets/images/MWlogoo.png" alt="could'nt load">
 	</div>
-
-
 	<br>
 	<br>
 	<h2>
-		<b><center>Delete Playlist</center></b>
+		<strong><center>Delete Playlist</center></strong>
 	</h2>
 	<table class="table table-hover" id="allsongs">
+		<caption></caption>
 		<thead>
 			<tr>
-				<th>S.no</th>
-				<th>Song_Details</th>
-				<th>Playlist_Name</th>
-				<th>Email_Id</th>
-				<th>Delete</th>
+				<th id="s.no">S.no</th>
+				<th id="songdetails">Song_Details</th>
+				<th id="plname">Playlist_Name</th>
+				<th id="mailid">Email_Id</th>
+				<th id="delete">Delete</th>
 			</tr>
 		</thead>
 		<br>
 		<br>
-
 		<tbody>
-
-
 			<c:forEach items="${DeletePlaylist}" var="DeletePlaylist">
 				<c:set var="i" value="${i+1 }" />
 				<tr>
-
 					<td>${i}</td>
 					<td>${DeletePlaylist.song}</td>
 					<td>${DeletePlaylist.playlistTitle}</td>
@@ -223,8 +211,6 @@ table.center {
 			</c:forEach>
 		</tbody>
 	</table>
-
-
 </body>
 </html>
 </body>

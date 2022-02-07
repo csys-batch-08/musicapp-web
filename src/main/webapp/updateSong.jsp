@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -158,12 +159,8 @@ top:70px;
     </style>
 </head>
 <body>
-
-
 <div id="nav">
-
-        <ul type="none">
-            
+        <ul type="none">           
             <li><a href ="ShowUserServlet">ManageUsers</a></li>
             <li>&nbsp;&nbsp;&nbsp;</li>
               <li>&nbsp;&nbsp;&nbsp;</li>
@@ -182,73 +179,62 @@ top:70px;
             <li><a href ="PlaylistAdminServlet">AllPlaylist</a></li>
               <li>&nbsp;&nbsp;&nbsp;</li>
                <li>&nbsp;&nbsp;&nbsp;</li>
-            <li><a href ="AdminHomeServlet">Home</a></li>
-          
+            <li><a href ="AdminHomeServlet">Home</a></li>         
         </ul>
         <div id="search">
 <form action="Search" method="get" style="text-align: center;">
-
 <input type="text" name = "Song_Title"  placeholder="Search for Music which you love..">
-
 <button type="submit">Search</button>
 </form>
 </div>
     </div>
- 
-<div><img id="logo" src="Assets/images/MWlogoo.png"></div>
-
-
-
+<div><img id="logo" src="Assets/images/MWlogoo.png" alt="Couldn't load"></div>
 	<form action="UpdateSong" id="addsongs">
     <fieldset class="signup">
+    <legend></legend>
        <center><h2>Update Song details here!</h2></center>
-
         <table id="signuptable" style="border-spacing: 5px;">
+        <caption></caption>
             <tr>
-                <th><label for="id">Song Id:</label></th>
-                <th><input type="number" name="song_id" id="id" placeholder="Enter song id" required autofocus></th>
+                <th id="songid"><label for="id">Song Id:</label></th>
+                <th id="songid"><input type="number" name="song_id" id="id" placeholder="Enter song id" required autofocus></th>
             </tr>
             <tr>
-                <th><label for="title">Song Title:</label></th>
-                <th><input type="text" name="song_title" id="title" placeholder="Enter song title" required autofocus></th>
-            </tr>
-           
+                <th id="songtitle"><label for="title">Song Title:</label></th>
+                <th id="songtitle"><input type="text" name="song_title" id="title" placeholder="Enter song title" required autofocus></th>
+            </tr>        
             <tr>
-                <th><label for="artist">Artists:</label></th>
-                <th><input type="text" name="artists" id="artist" placeholder="Enter artist"  required ></th>
-            </tr>
-           
-                    
+                <th id="songartist"><label for="artist">Artists:</label></th>
+                <th id="songartist"><input type="text" name="artists" id="artist" placeholder="Enter artist"  required ></th>
+            </tr>                  
            <tr>
-                <th><label for="album">Album:</label></th>
-                <th><input type="text" name="album" id=""album"" placeholder="Enter album" required ></th>
-            </tr>
-            
-                                  
+                <th id="songalbum"><label for="album">Album:</label></th>
+                <th id="songalbum"><input type="text" name="album" id=""album"" placeholder="Enter album" required ></th>
+            </tr>                               
             <tr>
-                <th><label for="genre">Genre:</label></th>
-                <th><input type="text" name="genre" id="genre" placeholder="Enter genre" required ></th>
-            </tr>
-           
+                <th id="songgenre"><label for="genre">Genre:</label></th>
+                <th id="songgenre"><input type="text" name="genre" id="genre" placeholder="Enter genre" required ></th>
+            </tr>         
             <tr>
-                <th><label for="language">Language:</label></th>
-                <th><input type="text" name="language" id="language" placeholder="Enter language" required></th>
+                <th id="songlang"><label for="language">Language:</label></th>
+                <th id="songlang"><input type="text" name="language" id="language" placeholder="Enter language" required></th>
             </tr> 
              <tr>
-                <th><label for="importSong">Add song to database:</label></th>
-                <th><input type="file" name="addSong" id="importSong"  required></th>
+                <th id="songfile"><label for="importSong">Add song to database:</label></th>
+                <th id="songfile"><input type="file" name="addSong" id="importSong"  required></th>
             </tr>     
               <tr>
-                <th><label for="imageSong">Add image to database:</label></th>
-                <th><input type="file" name="imgSong" id="imageSong"  required></th>
+                <th id="songimg"><label for="imageSong">Add image to database:</label></th>
+                <th id="songimg"><input type="file" name="imgSong" id="imageSong"  required></th>
             </tr>         
-        </table>
-       
+        </table>     
         <table id="buttontable">
+        <caption></caption>
+        <th id="buttom">
             <tr>
-                <td><button type="submit">Click to Update Details</button></td>
-                  
+                <td><button type="submit">Click to Update Details</button></td>                 
             </tr>
+            </th>
         </table>    
     </fieldset>
     </form>
