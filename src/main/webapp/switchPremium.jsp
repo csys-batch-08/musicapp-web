@@ -159,11 +159,14 @@ table.center {
 	position: absolute;
 	top: 70px;
 }
+h2,h3{
+text-align: center;
+}
 </style>
 </head>
 <body>
 	<div id="nav">
-		<ul type="none">
+		<ul>
 			<li><a href=""ShowSongServlet">SongList</a></li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
@@ -182,40 +185,38 @@ table.center {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
-		</div>
-	</div>
-	<div>
+		</div >
+		<div>
 		<img id="logo" src="Assets/images/MWlogoo.png" alt="could'nt load">
 	</div>
-	<form action="switch">
-		<fieldset class="signup" id="addsongs">
+</div>
+	
+<form action="switch">
+	<fieldset class="signup" id="addsongs">
 			<br>
-			<br> <br>
+			<br><br>
 			<br>
-			<center>
 				<h2>Subscribe here to switch premium!</h2>
-			</center>
-
-			<table id="signuptable" style="border-spacing: 5px;">
+			     <table id="signuptable" style="border-spacing: 5px;">
 				<br>
-				<center>
 					<h3>Pay 250Rs for premium pack</h3>
-				</center>
-				<center>
 					<h3>Pack validity 90 days</h3>
-				</center>
-				<table id="buttontable">
+				     
+				    <table id="buttontable">
 					<tr>
 						<td><button>
 								<a href="switch" class="switch">Subscribe</a>
 							</button></td>
 					</tr>
-				</table>
-				</fieldset>
-				</form>
+				    </table>
+				 </table>
+			</fieldset>
+	</form>
 </body>
 </html>

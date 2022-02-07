@@ -213,7 +213,9 @@ body {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
@@ -277,7 +279,7 @@ body {
 								</tr>
 								<tr>
 									<td id="songcontrol"><audio controls>
-											<source src="Assets/songs/${premiumHome.songFile}">
+											<source src="Assets/songs/${premiumHome.songFile}"></source>
 										</audio></td>
 								</tr>
 								</tr>

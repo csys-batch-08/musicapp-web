@@ -116,23 +116,22 @@ table.center {
 .gl:hover {
 	background: rgb(109, 216, 235);
 }
+h2{
+text-align: center;
+}
+
 </style>
-
-
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
 	rel="stylesheet">
 <script
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-
 </head>
 <body>
 <body style="background-color: lightblue">
 	<div id="navs">
 
 		<ul type="none">
-
 
 			<li><a href="ShowSongPremiumUser">SongList</a></li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
@@ -157,10 +156,10 @@ table.center {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
-
+                <label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
-
 				<button type="submit">Search</button>
 			</form>
 		</div>
@@ -172,7 +171,7 @@ table.center {
 	<br>
 	<br>
 	<h2>
-		<strong><center>All Songs List</center></strong>
+		All Songs List
 	</h2>
 	<table class="table table-hover" id="allsongs">
 		<caption></caption>
@@ -203,7 +202,7 @@ table.center {
 					<td>${SongList.genre}</td>
 					<td>${SongList.language}</td>
 					<td><audio controls>
-							<source src="Assets/songs/${SongList.songFile}">
+							<source src="Assets/songs/${SongList.songFile}"></source>
 						</audio></td>
 					<td><img id="img" src="Assets/images/${SongList.songImage}"
 						alt="Couldn't load"></td>

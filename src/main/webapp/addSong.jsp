@@ -159,6 +159,9 @@ table.center {
 	position: absolute;
 	top: 70px;
 }
+h2{
+text-align: center;
+}
 </style>
 </head>
 <body>
@@ -186,7 +189,9 @@ table.center {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
@@ -198,9 +203,7 @@ table.center {
 	<form action="addSongs" id="addsongs">
 		<fieldset class="songadd">
 			<legend></legend>
-			<center>
 				<h2>Add Song</h2>
-			</center>
 			<table id="signuptable" style="border-spacing: 5px;">
 				<caption></caption>
 				<tr>
@@ -216,7 +219,7 @@ table.center {
 				</tr>
 				<tr>
 					<th id="Artist"><label for="Artist">Artists:</label></th>
-					<th id="Artist"><input type="text" name="Artists" id="Artists"
+					<th id="Artist"><input type="text" name="Artists" id="Artist"
 						placeholder="Enter Artist Name" pattern="[a-zA-Z]{3,30}" required></th>
 				</tr>
 				<tr>

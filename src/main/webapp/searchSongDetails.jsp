@@ -56,7 +56,7 @@
 					<td>${SongSearch.genre}</td>
 					<td>${SongSearch.language}</td>			 
 					<td><audio  controls>
-					<source src="Assets/songs/${SongSearch.songFile}" >
+					<source src="Assets/songs/${SongSearch.songFile}"></source>
 					</audio>
 					</td>
 					<td><img id="img" src="Assets/images/${SongSearch.songImage}" alt="Couldn't load"></td>					

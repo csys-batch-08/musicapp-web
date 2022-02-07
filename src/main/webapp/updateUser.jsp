@@ -159,6 +159,9 @@ table.center {
 	position: absolute;
 	top: 70px;
 }
+h2 {
+text-align: center;
+}
 </style>
 </head>
 <body>
@@ -182,7 +185,9 @@ table.center {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
@@ -194,9 +199,7 @@ table.center {
 	<form action="Update">
 		<fieldset class="signup" id="addsongs">
 			<legend></legend>
-			<center>
 				<h2>Update details here!</h2>
-			</center>
 			<table id="signuptable" style="border-spacing: 5px;">
 				<caption></caption>
 				<tr>

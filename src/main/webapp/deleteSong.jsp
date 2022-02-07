@@ -121,6 +121,9 @@ table.center {
 	text-decoration: none;
 	color: white;
 }
+h2{
+text-align: center;
+}
 </style>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -154,7 +157,9 @@ table.center {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
@@ -166,7 +171,7 @@ table.center {
 	<br>
 	<br>
 	<h2>
-		<strong><center>Manage songs</center></strong>
+		<strong>Manage songs</strong>
 	</h2>
 	<table class="table table-dark table-hover" id="allsongs">
 		<caption></caption>

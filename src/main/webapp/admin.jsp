@@ -121,6 +121,9 @@ table.center {
 body {
 	overflow-x: hidden;
 }
+h1,h2{
+text-align: center;
+}
 </style>
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
@@ -154,7 +157,9 @@ body {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
@@ -165,7 +170,6 @@ body {
 	</div>
 	<br>
 	<br>
-	<center>
 		<p>
 		<h1>
 			<strong>Music can change the world</strong>
@@ -175,7 +179,6 @@ body {
 			<em>-Beethoven</em>
 		</h2>
 		</p>
-	</center>
 	<table class="table table-dark table-hover" id="allsongs">
 		<caption></caption>
 		<thead>
@@ -192,7 +195,7 @@ body {
 				<tr>
 					<td>${HomeAdmin.songTitle}</td>
 					<td><audio controls>
-							<source src="Assets/songs/${HomeAdmin.songFile}">
+							<source src="Assets/songs/${HomeAdmin.songFile}"></source>
 						</audio></td>
 					<td><img id="img" src="Assets/images/${HomeAdmin.songImage}"
 						alt="Couldn't load"></td>

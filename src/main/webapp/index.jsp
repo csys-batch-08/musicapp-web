@@ -72,15 +72,16 @@ a {
 	flex-wrap: wrap;
 	justify-content: center;
 }
+h2{
+text-align: center;
+}
 </style>
 </head>
 <body>
 	<form action="registerweb">
 		<fieldset class="signup">
 			<legend></legend>
-			<center>
 				<h2>Registeration</h2>
-			</center>
 			<table id="signuptable" style="border-spacing: 5px;">
 				<caption></caption>
 				<tr>
@@ -136,9 +137,7 @@ a {
 		</fieldset>
 	</form>
 	<div style="color: black; font-size: 49px">
-		<center>
-			<p id="emailresponse"></p>
-		</center>
+			<h2><p id="emailresponse"></p></h2>
 	</div>
 	<script>
 		function emailvalid() {

@@ -154,6 +154,9 @@ table.center {
 	position: absolute;
 	top: 70px;
 }
+h2{
+text-align: center;
+}
 </style>
 </head>
 <body>
@@ -177,7 +180,9 @@ table.center {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
@@ -190,29 +195,27 @@ table.center {
 		<fieldset class="signup" id="addsongs">
 			<legend></legend>
 			<br>
-			<center>
 				<h2>Recharge Wallet here!</h2>
-			</center>
 			<table id="signuptable" style="border-spacing: 5px;">
 				<caption></caption>
 				<br>
 				<br>
 				<tr>
-					<th id="mailid"><label for="emailId">Email Id:</label></th>
-					<th id="mailid"><input type="email" name="UserEmail"
+					<th id="emailId"><label for="emailId">Email Id:</label></th>
+					<th id="emailId"><input type="email" name="UserEmail"
 						id="emailId" placeholder="Enter email Id"
 						pattern="[a-z0-9]+[@][a-z]+[.][a-z]+{2,5}" required autofocus></th>
 				</tr>
 				<tr>
-					<th id="mobnum"><label for="mobile">Mobile Number:</label></th>
-					<th id="mobnum"><input type="number" name="MobileNumber"
+					<th id="mobile"><label for="mobile">Mobile Number:</label></th>
+					<th id="mobile"><input type="number" name="MobileNumber"
 						id="mobile" placeholder="Enter mobile number" pattern="[0-9]+{10}"
 						required></th>
 				</tr>
 				<tr>
-					<th id="amount"><label for="Amount">Amount:</label></th>
-					<th id="amount"><input type="number" min="0" name="Amount"
-						id="amount" placeholder="Enter Amount" pattern="[0-9]+{10}"
+					<th id="Amount"><label for="Amount">Amount:</label></th>
+					<th id="Amount"><input type="number" min="0" name="Amount"
+						id="Amount" placeholder="Enter Amount" pattern="[0-9]+{10}"
 						required></th>
 			</table>
 			<table id="buttontable">

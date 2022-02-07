@@ -159,6 +159,9 @@ table.center {
 	position: absolute;
 	top: 70px;
 }
+h2,h2{
+text-align: center;
+}
 </style>
 </head>
 <body>
@@ -186,7 +189,9 @@ table.center {
 		</ul>
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
+				<label for="songdetails"></label>
 				<input type="text" name="Song_Title"
+					id="songdetails"
 					placeholder="Search for Music which you love..">
 				<button type="submit">Search</button>
 			</form>
@@ -200,14 +205,10 @@ table.center {
 			<legend></legend>
 			<br>
 			<br>
-			<center>
 				<h2>Add On User to share Premium account</h2>
-			</center>
 			<table id="signuptable" style="border-spacing: 5px;">
 				<caption></caption>
-				<center>
 					<h3>Enter present user's Email Id here</h3>
-				</center>
 				<tr>
 					<th id="emailId"><label for="emailId">Email Id:</label></th>
 					<th id="emailId"><input type="email" name="UserEmail"
@@ -215,9 +216,11 @@ table.center {
 						pattern="[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required></th>
 				</tr>
 				<table id="buttontable">
+				<th>
 					<tr>
 						<td><button>Click to Add</button></td>
 					</tr>
+					</th>
 				</table>
 			</table>
 		</fieldset>

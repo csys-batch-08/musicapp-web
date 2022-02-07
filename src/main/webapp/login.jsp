@@ -160,12 +160,16 @@ a:hover {
 		</p>
 		<form action="login">
 			<div class="form-item">
-				<span class="material-icons-outlined"> </span> <input type="text"
+				<span class="material-icons-outlined"> </span> 
+				   <label for="text">
+				   <input type="text"
 					name="text" id="text" placeholder="Enter Email Id"
 					pattern="[a-z0-9]+[@][a-z]+[.][a-z]{2,5}" required>
 			</div>
 			<div class="form-item">
-				<span class="material-icons-outlined"> </span> <input
+				<span class="material-icons-outlined"> </span> 
+				    <label for="pass">
+				   <input
 					type="password" name="pass" id="pass" placeholder="Enter Password"
 					pattern="[a-zA-Z0-9@#]{5,10}" required>
 			</div>
@@ -178,12 +182,12 @@ a:hover {
 			</div>
 		</form>
 	</div>
-	<c:if test="${errors!=null}">
+	       <c:if test="${errors!=null}">
 			<h2>
-				<em>${errors}
-			</h2>
+				<em>${errors}			
 			</em>
-	</c:if>
+			</h2>
+	       </c:if>
 	</div>
 </body>
 </html>
