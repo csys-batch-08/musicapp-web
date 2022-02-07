@@ -16,31 +16,26 @@ import com.webmusic.model.Library;
 @WebServlet("/DeleteSonglistServlet")
 public class DeleteSonglistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-   
-    public DeleteSonglistServlet() {
-        super();
 
-    }
+	public DeleteSonglistServlet() {
+		super();
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-
-		LibraryDao libraryDao = new   LibraryDao();
-		List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-		objsonglist=libraryDao.showAllSongs();
-         System.out.println("ser"+objsonglist);
-
-
-		request.setAttribute("DeleteSongs",objsonglist);
-		RequestDispatcher rd=request.getRequestDispatcher("deleteSong.jsp");
-		
-		rd.forward(request, response);
-		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			LibraryDao libraryDao = new LibraryDao();
+			List<Library> objsonglist = (List<Library>) request.getAttribute("allSongs");
+			objsonglist = libraryDao.showAllSongs();
 
-		doGet(request, response);
+			request.setAttribute("DeleteSongs", objsonglist);
+			RequestDispatcher rd = request.getRequestDispatcher("deleteSong.jsp");
+			rd.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
 }

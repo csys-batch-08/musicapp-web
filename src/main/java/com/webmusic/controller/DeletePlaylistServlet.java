@@ -17,28 +17,27 @@ import com.webmusic.model.Playlist;
 @WebServlet("/DeletePlaylistServlet")
 public class DeletePlaylistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
- 
-    public DeletePlaylistServlet() {
-        super();
-       
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		
-		PlaylistDao playlistDao = new PlaylistDao();
-        List<Playlist> showPlaylist = new ArrayList<>();
-        showPlaylist = playlistDao.showAllPlaylist();
+	public DeletePlaylistServlet() {
+		super();
 
-    	request.setAttribute("DeletePlaylist",showPlaylist);
-		RequestDispatcher rd=request.getRequestDispatcher("deletePlaylist.jsp");	
-		rd.forward(request, response);
-		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		doGet(request, response);
-	}
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
 
+			PlaylistDao playlistDao = new PlaylistDao();
+			List<Playlist> showPlaylist = new ArrayList<>();
+			showPlaylist = playlistDao.showAllPlaylist();
+
+			request.setAttribute("DeletePlaylist", showPlaylist);
+			RequestDispatcher rd = request.getRequestDispatcher("deletePlaylist.jsp");
+			rd.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

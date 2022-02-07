@@ -21,71 +21,47 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/Search")
 public class SearchSongServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-   
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
-	{	
+
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		
+
 		try {
-		String songname = request.getParameter("Song_Title");
-		
-		System.out.println("Completed 1"+songname);
-		LibraryDao song = new LibraryDao();
+			String songname = request.getParameter("Song_Title");
+			LibraryDao song = new LibraryDao();
+			List<Library> songtitle = song.searchsongs();
+			List<Library> showList = new ArrayList<>();
 
-	   
-		 List<Library> songtitle = song.searchsongs();
+			for (int i = 0; i < songtitle.size(); i++) {
+				Library search = songtitle.get(i);
 
-		  List<Library> showList = new ArrayList<Library>();
-		 
-		 for(int i =0; i<songtitle.size(); i++) {
-			 
-			 Library search = songtitle.get(i); 
-			 
-		if(search.getSongTitle().equalsIgnoreCase(songname)) {
-			System.out.println("song title"+search);
-			showList.add(search);
-		}else if(search.getArtists().equalsIgnoreCase(songname)) {
-			System.out.println("song artists"+search);
-			showList.add(search);
-		}else if(search.getAlbum().equalsIgnoreCase(songname)) {
-			System.out.println("song album"+search);
-			showList.add(search);
-		}else if(search.getGenre().equalsIgnoreCase(songname)) {
-			System.out.println("song genre"+search);
-			showList.add(search);
-		}else if(search.getLanguage().equalsIgnoreCase(songname)) {
-			System.out.println("song lang"+search);
-			showList.add(search);
-		}else
-		{
-			response.getWriter().print("No song found..!!!");
+				if (search.getSongTitle().equalsIgnoreCase(songname)) {
+					showList.add(search);
+				} else if (search.getArtists().equalsIgnoreCase(songname)) {
+					showList.add(search);
+				} else if (search.getAlbum().equalsIgnoreCase(songname)) {
+					showList.add(search);
+				} else if (search.getGenre().equalsIgnoreCase(songname)) {
+					showList.add(search);
+				} else if (search.getLanguage().equalsIgnoreCase(songname)) {
+					showList.add(search);
+				} else {
+					response.getWriter().print("No song found..!!!");
+				}
+				for (int j = 0; j < showList.size(); j++) {
+					Library liObj = showList.get(j);
+				}
+			}
+
+			session.setAttribute("songname", showList);
+			RequestDispatcher rd = request.getRequestDispatcher("searchSongDetails.jsp");
+			rd.forward(request, response);
+
+		} catch (Exception e) {
+
+			e.printStackTrace();
 		}
-			 for(int j=0;j<showList.size();j++) {
-			 
-			 Library liObj = showList.get(j);
-			 System.out.println("new list : "+liObj);
-			 
-			 }
-			 
-		 }
-
-		 
-	
-		session.setAttribute("songname",showList );
-		RequestDispatcher rd=request.getRequestDispatcher("searchSongDetails.jsp");
-		rd.forward(request, response);
-		
-	} catch (Exception e) {
-
-		e.printStackTrace();
-	}
-	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
 	}
 
 }

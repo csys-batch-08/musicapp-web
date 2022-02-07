@@ -16,33 +16,25 @@ import com.webmusic.model.Library;
 @WebServlet("/ShowSongServlet")
 public class ShowSongServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
- 
-    public ShowSongServlet() {
-        super();
 
-    }
+	public ShowSongServlet() {
+		super();
 
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-	
-		
-			LibraryDao libraryDao = new   LibraryDao();
-			List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-			objsonglist=libraryDao.showAllSongs();
-             System.out.println("ser"+objsonglist);
+	}
 
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			LibraryDao libraryDao = new LibraryDao();
+			List<Library> objsonglist = (List<Library>) request.getAttribute("allSongs");
+			objsonglist = libraryDao.showAllSongs();
 
-			request.setAttribute("AllSongs",objsonglist);
-			RequestDispatcher rd=request.getRequestDispatcher("showSongUser.jsp");
-			
+			request.setAttribute("AllSongs", objsonglist);
+			RequestDispatcher rd = request.getRequestDispatcher("showSongUser.jsp");
 			rd.forward(request, response);
-		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
-	}
-
 }

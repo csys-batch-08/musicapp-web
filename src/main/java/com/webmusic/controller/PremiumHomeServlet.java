@@ -13,35 +13,28 @@ import javax.servlet.http.HttpServletResponse;
 import com.webmusic.daoimpl.LibraryDao;
 import com.webmusic.model.Library;
 
-/**
- * Servlet implementation class PremiumHomeServlet
- */
 @WebServlet("/PremiumHomeServlet")
 public class PremiumHomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-    public PremiumHomeServlet() {
-        super();
 
-    }
-
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		LibraryDao libraryDao = new   LibraryDao();
-		List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-		objsonglist=libraryDao.showAllSongs();
-
-		request.setAttribute("AllSongsPremium",objsonglist);
-		RequestDispatcher rd=request.getRequestDispatcher("home.jsp");
-        rd.forward(request, response);
-		
-		
+	public PremiumHomeServlet() {
+		super();
 	}
 
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			LibraryDao libraryDao = new LibraryDao();
+			List<Library> objsonglist = (List<Library>) request.getAttribute("allSongs");
+			objsonglist = libraryDao.showAllSongs();
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+			request.setAttribute("AllSongsPremium", objsonglist);
+			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+			rd.forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-
 }

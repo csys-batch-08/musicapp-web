@@ -23,22 +23,19 @@ public class ShowUserServlet extends HttpServlet {
         super();
     }
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		UserInfoDao UserInfoDao = new UserInfoDao();
-        List<UserInfo> userList = new ArrayList<UserInfo>();
-        userList = UserInfoDao.showAllUsers();
+try {
+		UserInfoDao userInfoDao = new UserInfoDao();
+		List<UserInfo> userList = new ArrayList<>();
+        userList = userInfoDao.showAllUsers();
 
     	request.setAttribute("UserlistAdmin",userList);
 		RequestDispatcher rd=request.getRequestDispatcher("showUsers.jsp");	
 		rd.forward(request, response);
 		
+	}catch (Exception e) {
+		e.printStackTrace();
 	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
-	}
-
+}
 }

@@ -14,30 +14,27 @@ import javax.servlet.http.HttpServletResponse;
 import com.webmusic.daoimpl.PlaylistDao;
 import com.webmusic.model.Playlist;
 
-
 @WebServlet("/PlaylistAdminServlet")
 public class PlaylistAdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-    public PlaylistAdminServlet() {
-        super();
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		PlaylistDao playlistDao = new PlaylistDao();
-        List<Playlist> showPlaylist = new ArrayList<>();
-        showPlaylist = playlistDao.showAllPlaylist();
-
-    	request.setAttribute("AllPlaylistAdmin",showPlaylist);
-		RequestDispatcher rd=request.getRequestDispatcher("showPlaylist.jsp");	
-		rd.forward(request, response);
-		
+	public PlaylistAdminServlet() {
+		super();
 	}
 
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			PlaylistDao playlistDao = new PlaylistDao();
+			List<Playlist> showPlaylist = new ArrayList<>();
+			showPlaylist = playlistDao.showAllPlaylist();
 
+			request.setAttribute("AllPlaylistAdmin", showPlaylist);
+			RequestDispatcher rd = request.getRequestDispatcher("showPlaylist.jsp");
+			rd.forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }

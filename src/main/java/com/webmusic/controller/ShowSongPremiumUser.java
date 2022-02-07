@@ -22,25 +22,20 @@ public class ShowSongPremiumUser extends HttpServlet {
 
     }
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	try {
 				
 		LibraryDao libraryDao = new   LibraryDao();
 		List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
 		objsonglist=libraryDao.showAllSongs();
-         System.out.println("ser"+objsonglist);
-
 
 		request.setAttribute("AllSongsPremium",objsonglist);
 		RequestDispatcher rd=request.getRequestDispatcher("showSongPremium.jsp");
 		rd.forward(request, response);
 		
+	}catch (Exception e) {
+		e.printStackTrace();
 	}
-
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
-	}
-
+}
 }

@@ -16,33 +16,26 @@ import com.webmusic.model.Library;
 @WebServlet("/ShowSongAdmin")
 public class ShowSongAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-  
-    public ShowSongAdmin() {
-        super();
 
-    }
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		
-		LibraryDao libraryDao = new   LibraryDao();
-		List<Library> objsonglist = (List<Library>)request.getAttribute("allSongs");
-		objsonglist=libraryDao.showAllSongs();
-         System.out.println("ser"+objsonglist);
-
-
-		request.setAttribute("AllSongsAdmin",objsonglist);
-		RequestDispatcher rd=request.getRequestDispatcher("showSongAdmin.jsp");
-		rd.forward(request, response);
-	
-		
-		
+	public ShowSongAdmin() {
+		super();
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			LibraryDao libraryDao = new LibraryDao();
+			List<Library> objsonglist = (List<Library>) request.getAttribute("allSongs");
+			objsonglist = libraryDao.showAllSongs();
+			
+			request.setAttribute("AllSongsAdmin", objsonglist);
+			RequestDispatcher rd = request.getRequestDispatcher("showSongAdmin.jsp");
+			rd.forward(request, response);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		doGet(request, response);
 	}
 
 }

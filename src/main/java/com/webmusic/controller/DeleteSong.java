@@ -14,45 +14,31 @@ import com.webmusic.daoimpl.LibraryDao;
 @WebServlet("/deletesong")
 public class DeleteSong extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-  
-    public DeleteSong() {
-        super();
 
-    }
+	public DeleteSong() {
+		super();
 
+	}
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-
-			
-			String SongTitle = request.getParameter("songTitle");
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		try {
+			response.getWriter().append("Served at: ").append(request.getContextPath());
+			String songTitle = request.getParameter("songTitle");
 			LibraryDao librarydao = new LibraryDao();
-			try {
-				boolean b=librarydao.deleteSong(SongTitle);
-				if(b==true)
-				{
-					System.out.println(" song is deleted");
-					response.sendRedirect("DeleteSonglistServlet");
-					
-				}else
-				{
-					response.getWriter().print("Song not deleted");
-				}
-				
-			
-			
-			
-			
+
+			boolean b = librarydao.deleteSong(songTitle);
+			if (b == true) {
+				response.sendRedirect("DeleteSonglistServlet");
+			} else {
+				response.getWriter().print("Song not deleted");
+			}
+
 		} catch (Exception e) {
 
 			e.printStackTrace();
-		} 
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
+		}
 	}
 
 }
