@@ -26,21 +26,19 @@ public class DeletePlaylist extends HttpServlet {
 
     }
 
+	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		try {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		String PlaylistTitle = request.getParameter("plname");
-		System.out.println("jsp "+PlaylistTitle);
+		String playlisttitle = request.getParameter("plname");
 		HttpSession session=request.getSession();
 		UserInfo user = (UserInfo)	session.getAttribute("PremiumUser");
 		
 		
 		PlaylistDao playlistdao = new PlaylistDao();
-		
-		
-		try {
-			boolean b=playlistdao.deletePlaylist(PlaylistTitle, user.getEmailId());
+			
+			boolean b=playlistdao.deletePlaylist(playlisttitle, user.getEmailId());
 			if(b==true)
 			{
 			response.sendRedirect("DeletePlaylistServlet");
@@ -55,9 +53,5 @@ public class DeletePlaylist extends HttpServlet {
 	}
 
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		doGet(request, response);
-	}
 
 }
