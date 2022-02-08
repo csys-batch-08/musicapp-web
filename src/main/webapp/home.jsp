@@ -60,11 +60,12 @@ table.center {
 	background-color: transparent;
 	font-size: 18px;
 	color: white;
+	width: 300px
 }
 
 #search  button {
-	position: relative;
-	left: 0px;
+	position: absolute;
+	right: 0px;
 	background-color: skyBlue;
 	border: none;
 	color: black;

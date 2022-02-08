@@ -127,14 +127,12 @@ public class UserInfoDao implements UserInfoInterface {
 
 	// Switch to Premium
 	public int SwitchToPremium(UserInfo user) {
-		String query = "update user_info set role=?, subscription_date=sysdate, expiry_date=sysdate+90 where email_id=?";
+		String query = "update user_info set role=?,user_wallet=user_wallet-250, subscription_date=sysdate, expiry_date=sysdate+90 where email_id=?";
 		Connection con = null;
 		PreparedStatement updateUser = null;
 		int i = 0;
 		try {
 			con = ConnectionUtil.getDBconnect();
-			user.setWallet(user.getWallet() - 250);
-			UpdateUserWallet(user);
 			updateUser = con.prepareStatement(query);
 			updateUser.setString(1, "Premium");
 			updateUser.setString(2, user.getEmailId());

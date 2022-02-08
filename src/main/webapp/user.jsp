@@ -22,6 +22,7 @@ ul {
 	font-weight: bolder;
 	padding: 30px 150px;
 	opacity: 0.5px;
+	width: 1065px;
 }
 
 li {
@@ -39,11 +40,13 @@ body {
 	font-family: "Lato", sans-serif;
 }
 
+
 #search {
 	position: absolute;
 	top: 15px;
 	right: 10px;
 	border: 2px solid white;
+	height: 45px;
 }
 
 #search input {
@@ -53,24 +56,23 @@ body {
 	outline: none;
 	background-color: transparent;
 	font-size: 18px;
-	color: white;
+	color: black;
+	width: 300px;
 }
 
 #search  button {
-	position: relative;
-	left: 0px;
+	position: absolute;
+	right: 0px;
 	background-color: skyBlue;
 	border: none;
 	color: black;
 	padding: 15px 32px;
 	text-align: center;
 	height: 45px;
-	font-family: bold;
-	font-size: 15px;
 }
 
 ::placeholder {
-	color: white;
+	color: lightblack;
 	font-size: 13px;
 	height: 30px;
 	font-style: italic;

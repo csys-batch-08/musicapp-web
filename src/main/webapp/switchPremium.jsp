@@ -184,6 +184,7 @@ h2, h3 {
 			<li>&nbsp;&nbsp;&nbsp;</li>
 			<li>&nbsp;&nbsp;&nbsp;</li>
 		</ul>
+	
 		<div id="search">
 			<form action="Search" method="get" style="text-align: center;">
 				<label for="songdetails"></label> <input type="text"
@@ -193,6 +194,7 @@ h2, h3 {
 			</form>
 		</div>
 	</div>
+	
 	<div>
 		<img id="logo" src="Assets/images/MWlogoo.png" alt="could'nt load">
 	</div>
