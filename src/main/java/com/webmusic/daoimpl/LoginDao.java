@@ -9,6 +9,7 @@ import com.webmusic.model.UserInfo;
 import com.webmusic.util.ConnectionUtil;
 
 public class LoginDao implements LoginInterface {
+	
 	public UserInfo login(String emailId, String password) {
 		Connection con = null;
 		PreparedStatement stmt = null;
@@ -33,7 +34,7 @@ public class LoginDao implements LoginInterface {
 		return user;
 	}
 
-	public Admin Checkadmin(String emailId, String Password) {
+	public Admin Checkadmin(String emailId, String password) {
 		Admin admin = null;
 		Connection con = null;
 		PreparedStatement stmt = null;
@@ -42,7 +43,7 @@ public class LoginDao implements LoginInterface {
 			String query = "select first_Name, last_Name, email_Id, user_Name, password, role, mobile_Number, user_Wallet from User_info where email_id= ? and password= ? and role='admin'";
 			stmt = con.prepareStatement(query);
 			stmt.setString(1, emailId);
-			stmt.setString(2, Password);
+			stmt.setString(2, password);
 			ResultSet rs = stmt.executeQuery();
 			if (rs.next()) {
 				admin = new Admin(rs.getString(3), rs.getString(5), rs.getLong(7));

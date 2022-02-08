@@ -14,9 +14,9 @@ public class AddSongs extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest req, HttpServletResponse res) {
-
+        boolean flag = false;
 		try {
-			LibraryDao libDao = new LibraryDao();
+			
 			int songId = Integer.parseInt(req.getParameter("SongId"));
 			System.out.println(songId);
 			
@@ -43,18 +43,13 @@ public class AddSongs extends HttpServlet {
 			
 			Library library = new Library(songId, songTitle, artist, album, genre, language,addSong,songImage);
 			LibraryDao sad = new LibraryDao();
-				sad.insertLibrary(library);
-				if(sad!=null) {
+			flag = sad.insertLibrary(library);
+				if(flag) {
 					res.sendRedirect("ShowSongAdmin");
-				}else
-				{
-					res.getWriter().print("Song is not added");
 				}
 			} catch (Exception e) {
 			   e.getMessage();
-			} 
-			
-		
+			} 	
 	}
 }
 

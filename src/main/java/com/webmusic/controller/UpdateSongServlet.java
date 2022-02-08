@@ -14,7 +14,7 @@ public class UpdateSongServlet extends HttpServlet {
 
 
 	public void service(HttpServletRequest req, HttpServletResponse res) {
-
+     boolean flag = false;
 		try {
 			LibraryDao updateDao = new LibraryDao();
 			
@@ -43,8 +43,8 @@ public class UpdateSongServlet extends HttpServlet {
 		    System.out.println(songImage);
 			Library update = new Library(songId, songTitle, artist, album, genre, language,addSong,songImage);
 		    LibraryDao updt = new LibraryDao();
-		    updt.update(update);
-		    if(updt!=null) {
+		    flag = updt.update(update);
+		    if(flag) {
 
                 res.sendRedirect("ShowSongAdmin");
 			}

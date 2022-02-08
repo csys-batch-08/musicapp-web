@@ -13,7 +13,7 @@ public class UpdateUserServlet extends HttpServlet {
 
 
 	public void service(HttpServletRequest req, HttpServletResponse res) {
-
+      boolean flag = false;
 		try {
 			UserInfoDao userDao = new UserInfoDao();
 			
@@ -39,11 +39,9 @@ public class UpdateUserServlet extends HttpServlet {
 
 		    UserInfo update=new UserInfo(fname,lname,email,uname,password,null,mboNum,0);
 			UserInfoDao upd=new UserInfoDao();
-		    upd.update(update);
-		    if(upd!=null) {
-//				res.getWriter().print("You'r Details are updated..!");
+		    flag = upd.update(update);
+		    if(flag) {
 			  res.sendRedirect("login.jsp");
-
 			}
 			else 
 			{
@@ -51,9 +49,8 @@ public class UpdateUserServlet extends HttpServlet {
 			}
 	
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				e.getMessage();
 			} 
-			
-		
+	
 	} 
 }

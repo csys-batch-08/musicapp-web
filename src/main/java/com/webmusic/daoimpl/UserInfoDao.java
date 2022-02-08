@@ -13,7 +13,7 @@ public class UserInfoDao implements UserInfoInterface {
 	static final String COMMIT = "commit";
 
 	// Add user using insert method
-	public void insertUser(UserInfo str) {
+	public boolean insertUser(UserInfo str) {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
@@ -34,10 +34,11 @@ public class UserInfoDao implements UserInfoInterface {
 		} finally {
 			ConnectionUtil.close(con, stmt);
 		}
+		return true;
 	}
 
 	// Update user details
-	public void update(UserInfo user) {
+	public boolean update(UserInfo user) {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
@@ -56,6 +57,7 @@ public class UserInfoDao implements UserInfoInterface {
 		} finally {
 			ConnectionUtil.close(con, stmt);
 		}
+		return true;
 	}
 
 	// Delete user

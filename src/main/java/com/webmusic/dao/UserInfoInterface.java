@@ -6,9 +6,9 @@ import java.util.List;
 import com.webmusic.model.UserInfo;
 
 public interface UserInfoInterface {
-	public void insertUser(UserInfo str) throws ClassNotFoundException, SQLException;
+	public boolean insertUser(UserInfo str) throws ClassNotFoundException, SQLException;
 	
-	public void update(UserInfo user) throws ClassNotFoundException, SQLException;
+	public boolean update(UserInfo user) throws ClassNotFoundException, SQLException;
 	
 	public boolean delete(String userName) throws ClassNotFoundException, SQLException;
 	

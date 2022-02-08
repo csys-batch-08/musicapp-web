@@ -14,7 +14,7 @@ import com.webmusic.util.ConnectionUtil;
 public class LibraryDao implements LibraryInterface {
 
 	// Add songs by admin
-	public void insertLibrary(Library str3) {
+	public boolean insertLibrary(Library str3) {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
@@ -35,11 +35,12 @@ public class LibraryDao implements LibraryInterface {
 		} finally {
 			ConnectionUtil.close(con, stmt);
 		}
+		return true;
 	}
 
 
 	// Update song details
-	public void update(Library up) {
+	public boolean update(Library up) {
 		Connection con = null;
 		PreparedStatement stmt = null;
 		try {
@@ -60,6 +61,7 @@ public class LibraryDao implements LibraryInterface {
 		} finally {
 			ConnectionUtil.close(con, stmt);
 		}
+		return true;
 	}
 
 	// Delete song

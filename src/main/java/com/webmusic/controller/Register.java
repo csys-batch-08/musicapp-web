@@ -18,7 +18,7 @@ public class Register extends HttpServlet {
 
 
 	public void service(HttpServletRequest req, HttpServletResponse res) {
-
+        boolean flag = false;
 		try {
 			UserInfoDao userDao = new UserInfoDao();
 			
@@ -47,21 +47,17 @@ public class Register extends HttpServlet {
 			UserInfo userInfo=new UserInfo(fname,lname,email,uname,password,role,mboNum,0);
 			UserInfoDao uid=new UserInfoDao();
 		
-			uid.insertUser(userInfo);
-				
-			
-				if(uid!=null) {
-					res.sendRedirect("login.jsp");
-					
+			 flag = uid.insertUser(userInfo);		
+				if(flag) {
+					res.sendRedirect("login.jsp");				
 				}
 				else 
 				{
 					res.getWriter().print("Not registered");
 				}
-
-				
+			
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				e.getMessage();
 			} 
 			
 	

@@ -27,9 +27,11 @@ public class Login extends HttpServlet{
 		String uname = req.getParameter("text");
 		String password = req.getParameter("pass");	
 		LoginDao loginDao = new LoginDao();
+		
+		Admin admin = null;
 		try 
 		{		
-				Admin admin = loginDao.Checkadmin(uname, password);				
+				 admin = loginDao.Checkadmin(uname, password);				
 				if(admin!=null)
 				{   
 					HttpSession session=req.getSession();
@@ -95,9 +97,7 @@ public class Login extends HttpServlet{
 						throw new LoginException();
 					}				
 				}
-				else {
-					throw new LoginException();
-				}
+				
 		}
 	catch (LoginException e) {
 			HttpSession session=req.getSession();

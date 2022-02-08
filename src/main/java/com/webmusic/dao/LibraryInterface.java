@@ -7,11 +7,9 @@ import com.webmusic.model.Library;
 
 public interface LibraryInterface {
 	
-	public void insertLibrary(Library str3) throws ClassNotFoundException, SQLException;
+	public boolean insertLibrary(Library str3) throws ClassNotFoundException, SQLException;
 	
-	//public void showSongs(Library show) throws ClassNotFoundException, SQLException;
-	
-	public void update(Library up) throws ClassNotFoundException, SQLException;
+	public boolean update(Library up) throws ClassNotFoundException, SQLException;
 	
 	public boolean deleteSong(String songTitle) throws ClassNotFoundException, SQLException;
 	

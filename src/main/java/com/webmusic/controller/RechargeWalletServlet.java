@@ -13,18 +13,14 @@ import com.webmusic.model.UserInfo;
 public class RechargeWalletServlet extends HttpServlet {
 
 
+	@Override
 	public void service(HttpServletRequest req, HttpServletResponse res) {
 
 		try {
-            UserInfoDao userDao = new UserInfoDao();
+            
 
             String email = req.getParameter("UserEmail");
-			System.out.println(email);
-			/*
-			 * Double cardNumber = Double.parseDouble(req.getParameter("AccountNumber"));
-			 * System.out.println(cardNumber); Double cvv =
-			 * Double.parseDouble(req.getParameter("cvv")); System.out.println(cvv);
-			 */
+
 			long mboNum = Long.parseLong(req.getParameter("MobileNumber"));
 			System.out.println(mboNum);
 			Double amount = Double.parseDouble(req.getParameter("Amount"));
@@ -32,7 +28,7 @@ public class RechargeWalletServlet extends HttpServlet {
 			
 			 UserInfo update=new UserInfo(null,null,email,null,null,null, mboNum, amount);
 				UserInfoDao upd=new UserInfoDao();
-			    upd.UpdateUserWallet(update);
+			   int flag= upd.UpdateUserWallet(update);
 		
 			
 		
@@ -40,7 +36,7 @@ public class RechargeWalletServlet extends HttpServlet {
 	        UserInfo user=(UserInfo)session.getAttribute("currentUser");
 	        user.setWallet(amount);
 
-			if(user!=null) {
+			if(flag>0) {
 				res.sendRedirect("exceptionAdd.jsp");
 				
 			}
@@ -50,9 +46,8 @@ public class RechargeWalletServlet extends HttpServlet {
 			}
 
 		    
-		    
 			} catch (Exception e) {
-				System.out.println(e.getMessage());
+				e.getMessage();
 			} 
 			
 		
