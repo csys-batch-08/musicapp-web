@@ -12,9 +12,10 @@ import com.webmusic.util.ConnectionUtil;
 
 public class PlaylistDao implements PlaylistInterface {
 	// Add playlist
-	public void insertPlaylist(Playlist playlist) {
+	public boolean insertPlaylist(Playlist playlist) {
 		Connection con = null;
 		PreparedStatement stmt = null;
+		boolean flag=false;
 		try {
 			con = ConnectionUtil.getDBconnect();
 			LibraryDao libDao = new LibraryDao();
@@ -25,11 +26,13 @@ public class PlaylistDao implements PlaylistInterface {
 			stmt.setString(2, playlist.getPlaylistTitle());
 			stmt.setString(3, playlist.getEmailId());
 			stmt.executeUpdate();
+			flag=true;
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			ConnectionUtil.close(con, stmt);
 		}
+		return flag;
 	}
 
 	// Find playlist

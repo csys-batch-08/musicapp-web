@@ -1,6 +1,6 @@
 package com.webmusic.controller;
 
-import java.util.ArrayList;
+ 
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -19,13 +19,12 @@ import com.webmusic.model.UserInfo;
 
 @WebServlet("/addPlaylist")
 public class AddPlaylist extends HttpServlet {
-
+	private static final long serialVersionUID = 1L;
 
 	@Override
 	public void service(HttpServletRequest req, HttpServletResponse res) {
 
 		try {		
-			PlaylistDao playlistDao = new PlaylistDao();
 			String songTitle = req.getParameter("SongTitle");
 			String playlistTitle = req.getParameter("PlaylistTitle");
 
@@ -37,13 +36,12 @@ public class AddPlaylist extends HttpServlet {
 			if(premiumUser!=null) {
 			Playlist playlist = new Playlist(lib, playlistTitle,premiumUser.getEmailId() );
 			PlaylistDao playDao = new PlaylistDao();			
-			playDao.insertPlaylist(playlist);
+			boolean flag=playDao.insertPlaylist(playlist);
 			
-			if(playDao!=null) {
-                  
+			if (flag) {
+             
 				 PlaylistDao playlistadd = new PlaylistDao();
-			        List<Playlist> showPlaylist = new ArrayList<>();
-			        showPlaylist = playlistadd.showAllPlaylist();
+			        List<Playlist> showPlaylist = playlistadd.showAllPlaylist();
 
 			    	req.setAttribute("AllPlaylist",showPlaylist);
 					RequestDispatcher rd=req.getRequestDispatcher("showPlaylistUser.jsp?AddedStatus=success");	
@@ -55,23 +53,8 @@ public class AddPlaylist extends HttpServlet {
 					res.getWriter().print("Playlist is Not added");
 			}
 			}
-			else if (premiumUser==null){
-				
-				UserInfo currentUser = (UserInfo) session.getAttribute("currentUser");
-				Playlist playlist = new Playlist(lib, playlistTitle,currentUser.getEmailId());
-				PlaylistDao playDao = new PlaylistDao();			
-				playDao.insertPlaylist(playlist);
-			    if(playDao!=null) {
-					res.getWriter().print("Your Playlist added.!");
-
-				}
-				else 
-				{
-					res.getWriter().print("Playlist is Not added");			
-			}
-			}
-		}
-			 catch (Exception e) {
+			
+		} catch (Exception e) {
 				 e.getMessage();
 			} 	
 	}

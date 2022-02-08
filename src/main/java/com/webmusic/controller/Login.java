@@ -25,32 +25,22 @@ public class Login extends HttpServlet{
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		UserInfo checkUser = null;
 		String uname = req.getParameter("text");
-
-		String password = req.getParameter("pass");
-
-		
+		String password = req.getParameter("pass");	
 		LoginDao loginDao = new LoginDao();
 		try 
-		{
-			
-			
-			
-				Admin admin = loginDao.Checkadmin(uname, password);
-				
+		{		
+				Admin admin = loginDao.Checkadmin(uname, password);				
 				if(admin!=null)
 				{   
 					HttpSession session=req.getSession();
 					session.setAttribute("Adminstaration", admin);
-					System.out.println("admin");
 				 
 				    LibraryDao libraryDao = new   LibraryDao();
 					List<Library> objsonglist = (List<Library>)req.getAttribute("allSongs");
 					objsonglist=libraryDao.showAllSongs();
 
 					req.setAttribute("AdminHome",objsonglist);
-					RequestDispatcher rd=req.getRequestDispatcher("admin.jsp");
-				    
-					
+					RequestDispatcher rd=req.getRequestDispatcher("admin.jsp");					
 					try {
 						rd.forward(req, res);
 					} catch (Exception e) {
@@ -98,28 +88,17 @@ public class Login extends HttpServlet{
 						} catch (Exception e) {
 							e.printStackTrace();
 						} 
-						
-						
-					}
+											
+					 }
 					}
 					else {
 						throw new LoginException();
-					}
-				
-					
-					
+					}				
 				}
 				else {
 					throw new LoginException();
 				}
-				
-					
-				
-
 		}
-		
-				
-	
 	catch (LoginException e) {
 			HttpSession session=req.getSession();
 			session.setAttribute("errors", e.getMessage());
