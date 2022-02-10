@@ -158,8 +158,8 @@ public class UserInfoDao implements UserInfoInterface {
 		try {
 			con = ConnectionUtil.getDBconnect();
 			pstmt = con.prepareStatement(updateQuery);
-			pstmt.setDate(1, java.sql.Date.valueOf(user.getSubscription_date()));
-			pstmt.setDate(2, java.sql.Date.valueOf(user.getExpiry_date()));
+			pstmt.setDate(1, java.sql.Date.valueOf(user.getSubscriptionDate()));
+			pstmt.setDate(2, java.sql.Date.valueOf(user.getExpiryDate()));
 			pstmt.setString(3, emailId);
 			i = pstmt.executeUpdate();
 			i = pstmt.executeUpdate(COMMIT);

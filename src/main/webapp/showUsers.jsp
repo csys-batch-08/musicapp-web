@@ -202,8 +202,8 @@ text-align: center;
 					<td>${Userlist.role}</td>
 					<td>${Userlist.mobileNumber}</td>
 					<td>${Userlist.wallet}</td>
-					<td>${Userlist.subscription_date}</td>
-					<td>${Userlist.expiry_date}</td>
+					<td>${Userlist.subscriptionDate}</td>
+					<td>${Userlist.expiryDate}</td>
 					<td><button class="btn btn-danger">
 							<a href="deleteuser?uname=${Userlist.userName}" id="del">InActive</a>
 						</button></td>

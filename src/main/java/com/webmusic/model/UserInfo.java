@@ -13,8 +13,8 @@ public class UserInfo implements Serializable{
 	private String role;
 	private long mobileNumber;
 	private double wallet;
-	private LocalDate subscription_date;
-	private LocalDate expiry_date;
+	private LocalDate subscriptionDate;
+	private LocalDate expiryDate;
 	
 	public String getFirstName() {
 		return firstName;
@@ -61,17 +61,17 @@ public class UserInfo implements Serializable{
 	public double getWallet() {
 		return wallet;
 	}
-	public LocalDate getSubscription_date() {
-		return subscription_date;
+	public LocalDate getSubscriptionDate() {
+		return subscriptionDate;
 	}
-	public void setSubscription_date(LocalDate subscription_date) {
-		this.subscription_date = subscription_date;
+	public void setSubscriptionDate(LocalDate subscriptionDate) {
+		this.subscriptionDate = subscriptionDate;
 	}
-	public LocalDate getExpiry_date() {
-		return expiry_date;
+	public LocalDate getExpiryDate() {
+		return expiryDate;
 	}
-	public void setExpiry_date(LocalDate expiry_date) {
-		this.expiry_date = expiry_date;
+	public void setExpiryDate(LocalDate expiryDate) {
+		this.expiryDate = expiryDate;
 	}
 	public void setWallet(double wallet) {
 		this.wallet = wallet;
@@ -106,8 +106,8 @@ public class UserInfo implements Serializable{
 		this.role = role;
 		this.mobileNumber = mobileNumber;
 		this.wallet = wallet;
-		this.subscription_date = subscription_date;
-		this.expiry_date = expiry_date;
+		this.subscriptionDate = subscription_date;
+		this.expiryDate = expiry_date;
 	}
 	@Override
 	public String toString() {

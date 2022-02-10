@@ -256,14 +256,14 @@ text-align: center;
 					<th id="subdate"><label for="subdate">Subscription
 							Date:</label></th>
 					<th id="subdate"><input type="date" name="subsDate"
-						id="subdate" value="${premiumUser.subscription_date}"
+						id="subdate" value="${premiumUser.subscriptionDate}"
 						readonly="readonly"></th>
 				</tr>
 				<tr>
 					<th id="expdate"><label for="expdate">Pack Expiry
 							Date:</label></th>
 					<th id="expdate"><input type="date" name="expDate"
-						id="expdate" value="${premiumUser.expiry_date}"
+						id="expdate" value="${premiumUser.expiryDate}"
 						readonly="readonly"></th>
 				</tr>
 			</table>

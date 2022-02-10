@@ -12,6 +12,7 @@ import com.webmusic.model.UserInfo;
 public class UpdateUserServlet extends HttpServlet {
 
 
+	@Override
 	public void service(HttpServletRequest req, HttpServletResponse res) {
       boolean flag = false;
 		try {
